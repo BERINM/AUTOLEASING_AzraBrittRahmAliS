@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.buttonJetztanmelden = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -91,9 +88,13 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.buttonSTARTJetzt_REGRI = new System.Windows.Forms.Button();
+            this.buttonSTART_LOGIN = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -103,6 +104,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,51 +128,17 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.pictureBox7);
+            this.tabPage1.Controls.Add(this.buttonSTARTJetzt_REGRI);
+            this.tabPage1.Controls.Add(this.buttonSTART_LOGIN);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.pictureBox4);
-            this.tabPage1.Controls.Add(this.buttonJetztanmelden);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(819, 849);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "START";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(167, 132);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(481, 181);
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // buttonJetztanmelden
-            // 
-            this.buttonJetztanmelden.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonJetztanmelden.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonJetztanmelden.ForeColor = System.Drawing.Color.White;
-            this.buttonJetztanmelden.Location = new System.Drawing.Point(167, 514);
-            this.buttonJetztanmelden.Name = "buttonJetztanmelden";
-            this.buttonJetztanmelden.Size = new System.Drawing.Size(486, 51);
-            this.buttonJetztanmelden.TabIndex = 3;
-            this.buttonJetztanmelden.Text = "J E T Z T  A N M E L D E N";
-            this.buttonJetztanmelden.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(167, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(486, 51);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "L O G I N";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
@@ -829,6 +799,63 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Location = new System.Drawing.Point(294, 323);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(247, 187);
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
+            // 
+            // buttonSTARTJetzt_REGRI
+            // 
+            this.buttonSTARTJetzt_REGRI.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSTARTJetzt_REGRI.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSTARTJetzt_REGRI.ForeColor = System.Drawing.Color.White;
+            this.buttonSTARTJetzt_REGRI.Location = new System.Drawing.Point(167, 653);
+            this.buttonSTARTJetzt_REGRI.Name = "buttonSTARTJetzt_REGRI";
+            this.buttonSTARTJetzt_REGRI.Size = new System.Drawing.Size(486, 51);
+            this.buttonSTARTJetzt_REGRI.TabIndex = 8;
+            this.buttonSTARTJetzt_REGRI.Text = "J E T Z T  R E G I S T I R I E N";
+            this.buttonSTARTJetzt_REGRI.UseVisualStyleBackColor = false;
+            // 
+            // buttonSTART_LOGIN
+            // 
+            this.buttonSTART_LOGIN.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonSTART_LOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSTART_LOGIN.ForeColor = System.Drawing.Color.White;
+            this.buttonSTART_LOGIN.Location = new System.Drawing.Point(167, 596);
+            this.buttonSTART_LOGIN.Name = "buttonSTART_LOGIN";
+            this.buttonSTART_LOGIN.Size = new System.Drawing.Size(486, 51);
+            this.buttonSTART_LOGIN.TabIndex = 7;
+            this.buttonSTART_LOGIN.Text = "L O G I N";
+            this.buttonSTART_LOGIN.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(118, 144);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(580, 256);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(109, 429);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(600, 228);
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -842,7 +869,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -857,6 +883,9 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -866,7 +895,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
@@ -883,8 +911,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button buttonJetztanmelden;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label1;
@@ -925,6 +951,11 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button buttonSTARTJetzt_REGRI;
+        private System.Windows.Forms.Button buttonSTART_LOGIN;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
