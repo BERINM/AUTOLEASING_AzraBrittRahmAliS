@@ -581,7 +581,7 @@
             this.buttonUpdatePassword.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonUpdatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdatePassword.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdatePassword.Location = new System.Drawing.Point(185, 591);
+            this.buttonUpdatePassword.Location = new System.Drawing.Point(169, 591);
             this.buttonUpdatePassword.Name = "buttonUpdatePassword";
             this.buttonUpdatePassword.Size = new System.Drawing.Size(487, 51);
             this.buttonUpdatePassword.TabIndex = 61;
@@ -595,7 +595,7 @@
             this.labelConfirmPassword.AutoSize = true;
             this.labelConfirmPassword.BackColor = System.Drawing.Color.White;
             this.labelConfirmPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelConfirmPassword.Location = new System.Drawing.Point(187, 392);
+            this.labelConfirmPassword.Location = new System.Drawing.Point(171, 392);
             this.labelConfirmPassword.Name = "labelConfirmPassword";
             this.labelConfirmPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelConfirmPassword.Size = new System.Drawing.Size(60, 16);
@@ -608,7 +608,7 @@
             this.buttonVerifyCode.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonVerifyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVerifyCode.ForeColor = System.Drawing.Color.White;
-            this.buttonVerifyCode.Location = new System.Drawing.Point(182, 518);
+            this.buttonVerifyCode.Location = new System.Drawing.Point(166, 518);
             this.buttonVerifyCode.Name = "buttonVerifyCode";
             this.buttonVerifyCode.Size = new System.Drawing.Size(487, 51);
             this.buttonVerifyCode.TabIndex = 56;
@@ -622,7 +622,7 @@
             this.labelNewPassword.AutoSize = true;
             this.labelNewPassword.BackColor = System.Drawing.Color.White;
             this.labelNewPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelNewPassword.Location = new System.Drawing.Point(187, 311);
+            this.labelNewPassword.Location = new System.Drawing.Point(171, 311);
             this.labelNewPassword.Name = "labelNewPassword";
             this.labelNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelNewPassword.Size = new System.Drawing.Size(102, 16);
@@ -633,7 +633,7 @@
             // textBoxConfirmPassword
             // 
             this.textBoxConfirmPassword.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(190, 413);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(174, 413);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxConfirmPassword.Size = new System.Drawing.Size(482, 22);
@@ -645,7 +645,7 @@
             this.labelVerification.AutoSize = true;
             this.labelVerification.BackColor = System.Drawing.Color.White;
             this.labelVerification.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelVerification.Location = new System.Drawing.Point(184, 358);
+            this.labelVerification.Location = new System.Drawing.Point(168, 358);
             this.labelVerification.Name = "labelVerification";
             this.labelVerification.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelVerification.Size = new System.Drawing.Size(103, 16);
@@ -656,7 +656,7 @@
             // textBoxNewPassword
             // 
             this.textBoxNewPassword.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxNewPassword.Location = new System.Drawing.Point(187, 335);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(171, 335);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxNewPassword.Size = new System.Drawing.Size(482, 22);
@@ -665,7 +665,7 @@
             // textBoxVerificationCode
             // 
             this.textBoxVerificationCode.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxVerificationCode.Location = new System.Drawing.Point(187, 377);
+            this.textBoxVerificationCode.Location = new System.Drawing.Point(171, 377);
             this.textBoxVerificationCode.Name = "textBoxVerificationCode";
             this.textBoxVerificationCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxVerificationCode.Size = new System.Drawing.Size(482, 22);
@@ -677,7 +677,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.White;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.linkLabel1.Location = new System.Drawing.Point(187, 443);
+            this.linkLabel1.Location = new System.Drawing.Point(171, 443);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.linkLabel1.Size = new System.Drawing.Size(136, 16);
@@ -692,7 +692,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkGray;
-            this.label13.Location = new System.Drawing.Point(577, 702);
+            this.label13.Location = new System.Drawing.Point(561, 702);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label13.Size = new System.Drawing.Size(87, 15);
@@ -704,7 +704,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(217, 132);
+            this.pictureBox5.Location = new System.Drawing.Point(201, 132);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(424, 126);
             this.pictureBox5.TabIndex = 51;
@@ -717,7 +717,7 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(146, 164);
+            this.button6.Location = new System.Drawing.Point(130, 164);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(41, 40);
             this.button6.TabIndex = 50;
@@ -730,7 +730,7 @@
             this.label5passwortlogin.AutoSize = true;
             this.label5passwortlogin.BackColor = System.Drawing.Color.White;
             this.label5passwortlogin.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5passwortlogin.Location = new System.Drawing.Point(184, 392);
+            this.label5passwortlogin.Location = new System.Drawing.Point(168, 392);
             this.label5passwortlogin.Name = "label5passwortlogin";
             this.label5passwortlogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5passwortlogin.Size = new System.Drawing.Size(93, 16);
@@ -742,7 +742,7 @@
             this.label6emaillogin.AutoSize = true;
             this.label6emaillogin.BackColor = System.Drawing.Color.White;
             this.label6emaillogin.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6emaillogin.Location = new System.Drawing.Point(184, 313);
+            this.label6emaillogin.Location = new System.Drawing.Point(168, 313);
             this.label6emaillogin.Name = "label6emaillogin";
             this.label6emaillogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6emaillogin.Size = new System.Drawing.Size(123, 16);
@@ -754,7 +754,7 @@
             this.buttonLOGIN.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonLOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLOGIN.ForeColor = System.Drawing.Color.White;
-            this.buttonLOGIN.Location = new System.Drawing.Point(182, 647);
+            this.buttonLOGIN.Location = new System.Drawing.Point(166, 647);
             this.buttonLOGIN.Name = "buttonLOGIN";
             this.buttonLOGIN.Size = new System.Drawing.Size(487, 51);
             this.buttonLOGIN.TabIndex = 47;
@@ -765,7 +765,7 @@
             // textBoxLOGINpasswort
             // 
             this.textBoxLOGINpasswort.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxLOGINpasswort.Location = new System.Drawing.Point(187, 413);
+            this.textBoxLOGINpasswort.Location = new System.Drawing.Point(171, 413);
             this.textBoxLOGINpasswort.Name = "textBoxLOGINpasswort";
             this.textBoxLOGINpasswort.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxLOGINpasswort.Size = new System.Drawing.Size(482, 22);
@@ -774,7 +774,7 @@
             // textBoxloginEMAIL
             // 
             this.textBoxloginEMAIL.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxloginEMAIL.Location = new System.Drawing.Point(187, 335);
+            this.textBoxloginEMAIL.Location = new System.Drawing.Point(171, 335);
             this.textBoxloginEMAIL.Name = "textBoxloginEMAIL";
             this.textBoxloginEMAIL.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxloginEMAIL.Size = new System.Drawing.Size(482, 22);

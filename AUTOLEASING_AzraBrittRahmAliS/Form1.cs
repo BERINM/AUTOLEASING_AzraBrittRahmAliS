@@ -20,6 +20,9 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         }
         private void InitializeUI()
         {
+            /*COMMIT TEST: WENN DU DAS SIEHST*/
+            /*Nimm die Kommentare weg, wenn du die Tabs verstecken willst*/
+
             /* tabControl1.Appearance = TabAppearance.FlatButtons;
              tabControl1.ItemSize = new Size(0, 1);
              tabControl1.SizeMode = TabSizeMode.Fixed;*/
