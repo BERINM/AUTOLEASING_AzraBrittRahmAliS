@@ -109,10 +109,11 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.buttonBearbeitenACC = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -128,6 +129,9 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1113,9 +1117,12 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button2);
-            this.tabPage5.Controls.Add(this.button1);
-            this.tabPage5.Controls.Add(this.checkBox1);
+            this.tabPage5.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.hintergrundautoleasing2;
+            this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Controls.Add(this.comboBox1);
+            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.pictureBox8);
+            this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1124,33 +1131,37 @@
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // dataGridView1
             // 
-            this.button2.Location = new System.Drawing.Point(334, 497);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 49);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(176, 201);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(471, 180);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
+            // pictureBox8
             // 
-            this.button1.Location = new System.Drawing.Point(229, 303);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBox8.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.Fahrzeuge;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(249, 66);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(314, 210);
+            this.pictureBox8.TabIndex = 1;
+            this.pictureBox8.TabStop = false;
             // 
-            // checkBox1
+            // pictureBox9
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(283, 71);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.pictureBox9.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.VERTRAG;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(288, 320);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(242, 180);
+            this.pictureBox9.TabIndex = 2;
+            this.pictureBox9.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -1161,6 +1172,14 @@
             this.pictureBox2.Size = new System.Drawing.Size(800, 566);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(176, 449);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(165, 24);
+            this.comboBox1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -1193,7 +1212,9 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -1208,7 +1229,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button buttonSTARTJetzt_REGRI;
         private System.Windows.Forms.Button buttonSTART_LOGIN;
@@ -1283,8 +1303,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button buttonBearbeitenACC;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

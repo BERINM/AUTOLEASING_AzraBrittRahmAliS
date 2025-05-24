@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -16,12 +17,56 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         {
             InitializeComponent();
             InitializeUI();
-
+            LoadFahrzeugeData();
         }
+
+        private void LoadFahrzeugeData()
+        {
+            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT * FROM Fahrzeug";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    dataGridView1.DataSource = dt;
+
+                    // Spaltenreihenfolge festlegen
+                    dataGridView1.Columns["F_ID"].DisplayIndex = 0;
+                    dataGridView1.Columns["Hersteller"].DisplayIndex = 1;
+                    dataGridView1.Columns["Modell"].DisplayIndex = 2;
+                    dataGridView1.Columns["Farbe"].DisplayIndex = 3;
+                    dataGridView1.Columns["Listenpreis"].DisplayIndex = 4;
+                    dataGridView1.Columns["Baujahr"].DisplayIndex = 5;
+                    dataGridView1.Columns["Leasingkategorie"].DisplayIndex = 6;
+
+                    // Header-Texte und Formatierungen
+                    dataGridView1.Columns["F_ID"].HeaderText = "Fahrzeug-ID";
+                    dataGridView1.Columns["Listenpreis"].DefaultCellStyle.Format = "C2";
+                    dataGridView1.ReadOnly = true;
+                    dataGridView1.AutoResizeColumns();
+
+                    // Nach ganz links scrollen
+                    dataGridView1.FirstDisplayedScrollingColumnIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim Laden der Fahrzeuge: " + ex.Message);
+                }
+            }
+        }
+
+
+
         private void InitializeUI()
         {
-            /*COMMIT TEST: WENN DU DAS SIEHST*/
-            /*Nimm die Kommentare weg, wenn du die Tabs verstecken willst*/
+      
 
             /* tabControl1.Appearance = TabAppearance.FlatButtons;
              tabControl1.ItemSize = new Size(0, 1);
@@ -739,6 +784,11 @@ Telefon: {reader["Telefonnummer"]}";
             {
                 MessageBox.Show("Ungültiger Code. Bitte versuchen Sie es erneut.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
