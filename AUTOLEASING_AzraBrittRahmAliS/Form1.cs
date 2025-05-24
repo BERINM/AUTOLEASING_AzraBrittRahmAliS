@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AUTOLEASING_AzraBrittRahmAliS
@@ -18,8 +19,46 @@ namespace AUTOLEASING_AzraBrittRahmAliS
             InitializeComponent();
             InitializeUI();
             LoadFahrzeugeData();
+            LoadFahrzeugComboBox();
+            dateTimePickerAnfang.MinDate = DateTime.Today;
+            dateTimePickerEnde.MinDate = DateTime.Today.AddDays(1);
         }
 
+        private void LoadFahrzeugComboBox()
+        {
+          
+            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT F_ID, CONCAT(Hersteller, ' ', Modell) AS FahrzeugInfo FROM Fahrzeug";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    comboboxFahrzeug.Items.Clear();
+                    while (reader.Read())
+                    {
+                        // Füge ein Objekt mit ID und Text hinzu
+                        comboboxFahrzeug.Items.Add(new
+                        {
+                            F_ID = Convert.ToInt32(reader["F_ID"]), // ID als Zahl
+                            DisplayText = reader["FahrzeugInfo"].ToString() // Anzeigetext
+                        });
+                    }
+
+                    // Textanzeige konfigurieren
+                    comboboxFahrzeug.DisplayMember = "DisplayText"; // Zeigt "BMW i4" an
+                    comboboxFahrzeug.ValueMember = "F_ID";          // Speichert die ID (z. B. 1)
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim Laden: " + ex.Message);
+                }
+            }
+        
+        }
         private void LoadFahrzeugeData()
         {
             string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
@@ -66,7 +105,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
         private void InitializeUI()
         {
-      
+
 
             /* tabControl1.Appearance = TabAppearance.FlatButtons;
              tabControl1.ItemSize = new Size(0, 1);
@@ -92,13 +131,13 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         }
 
 
- 
 
-     
+
+
         private bool ContainsNumbers(string input) => System.Text.RegularExpressions.Regex.IsMatch(input, @"\d");
         private bool IsNumeric(string input) => System.Text.RegularExpressions.Regex.IsMatch(input, @"^[0-9 +]+$");
 
-      
+
         private bool ValidateRegistrationData()
         {
             if (string.IsNullOrWhiteSpace(textBoxVorNREG.Text) ||
@@ -180,9 +219,9 @@ namespace AUTOLEASING_AzraBrittRahmAliS
             MessageBox.Show($"Ihr Verifikationscode: {verificationCode}", "Sicherheitscode", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-       
 
-    
+
+
 
         private void UpdatePasswordInDatabase(string email, string newPassword)
         {
@@ -283,6 +322,9 @@ Telefon: {reader["Telefonnummer"]}";
                     }
                 }
             }
+            vertragkundelabel.Text = ("Kunden-ID: ") + kundenId.ToString();
+
+            vertragkundelabel.BackColor = Color.LightGray; // Optional: Visuelle Markierung
         }
 
 
@@ -300,7 +342,7 @@ Telefon: {reader["Telefonnummer"]}";
         private bool isEditMode = false;
 
 
-    
+
         private void SetEditMode(bool editMode)
         {
             isEditMode = editMode;
@@ -331,7 +373,7 @@ Telefon: {reader["Telefonnummer"]}";
             return "m"; // Default value if none selected
         }
 
-       
+
         private void ResetAllForms()
         {
             // Zurücksetzen der Login-Felder
@@ -391,8 +433,16 @@ Telefon: {reader["Telefonnummer"]}";
             linkLabel1.Visible = true;
             label5passwortlogin.Visible = true;
             textBoxloginEMAIL.Enabled = true;
+
+            //Fahrzeug-Vertrag ELemente zurücksetzen
+            this.textBoxmrate.Text = "";
+            this.vertragkundelabel.Text = "";
+            dateTimePickerAnfang.Value = DateTime.Today;
+            dateTimePickerEnde.Value = DateTime.Today.AddMonths(1); // Standardmäßig 1 Monat Laufzeit
+            this.comboboxFahrzeug.SelectedIndex = -1;
+
         }
-       
+
 
         private void buttonSTART_LOGIN_Click(object sender, EventArgs e)
         {
@@ -470,9 +520,10 @@ Telefon: {reader["Telefonnummer"]}";
                     MessageBox.Show("Fehler bei der Registrierung: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
 
-       
+
 
         private void buttonLOGIN_Click(object sender, EventArgs e)
         {
@@ -790,6 +841,232 @@ Telefon: {reader["Telefonnummer"]}";
         {
 
         }
+
+        private void labelKundenID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonvertrag_Click(object sender, EventArgs e)
+        {
+
+            // 1. Validierungen
+            if (!int.TryParse(labelKundenID.Text.Replace("Kunden-ID: ", ""), out int kundenId))
+            {
+                MessageBox.Show("Ungültige Kunden-ID!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (comboboxFahrzeug.SelectedItem == null)
+            {
+                MessageBox.Show("Bitte ein Fahrzeug auswählen!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Rate berechnen (GLEICHE LOGIK wie in AktualisiereRate)
+            dynamic selectedItem = comboboxFahrzeug.SelectedItem;
+            int fahrzeugId = selectedItem.F_ID;
+            decimal rate = BerechneMonatlicheRate(fahrzeugId, dateTimePickerAnfang.Value, dateTimePickerEnde.Value);
+
+            // 3. Textbox und MessageBox synchronisieren
+            textBoxmrate.Text = rate.ToString("C"); // Gleiche Formatierung
+
+            // 4. Vertrag in Datenbank speichern
+            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"INSERT INTO Leasingvertrag 
+              (K_ID, F_ID, Vertragsbeginn, Vertragsende, monatliche_Rate)
+              VALUES (@K_ID, @F_ID, @Anfang, @Ende, @Rate)";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@K_ID", kundenId);
+                cmd.Parameters.AddWithValue("@F_ID", fahrzeugId);
+                cmd.Parameters.AddWithValue("@Anfang", dateTimePickerAnfang.Value.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Ende", dateTimePickerEnde.Value.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@Rate", rate);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            MessageBox.Show($"Vertrag erstellt! Monatliche Rate: {rate:C}", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        
+
+        
+        private void ErstelleLeasingvertrag()
+        {
+            try
+            {
+                string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"INSERT INTO Leasingvertrag 
+                            (V_ID, K_ID, F_ID, Vertragsbeginn, Vertragsende, monatliche_Rate)
+                            VALUES (@V_ID, @K_ID, @F_ID, @Anfang, @Ende, @Rate)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@V_ID", GeneriereNeueVertragsID());
+                    cmd.Parameters.AddWithValue("@K_ID", labelKundenID.Text); // Angenommen, KundenID ist in einem Label
+                    cmd.Parameters.AddWithValue("@F_ID", ((dynamic)comboboxFahrzeug.SelectedItem).F_ID);
+                    cmd.Parameters.AddWithValue("@Anfang", dateTimePickerAnfang.Value.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@Ende", dateTimePickerEnde.Value.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@Rate", decimal.Parse(textBoxmrate.Text));
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Vertrag erfolgreich erstellt!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler: " + ex.Message);
+            }
+        }
+        private int GeneriereNeueVertragsID()
+        {
+            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Holt die höchste vorhandene V_ID und addiert 1
+                MySqlCommand cmd = new MySqlCommand("SELECT MAX(V_ID) FROM Leasingvertrag", conn);
+                object result = cmd.ExecuteScalar();
+
+                return (result == DBNull.Value) ? 1 : Convert.ToInt32(result) + 1;
+            }
+        }
+
+        private void dateTimePickerAnfang_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (dateTimePickerAnfang.Value < DateTime.Today)
+            {
+                errorProvider1.SetError(dateTimePickerAnfang, "Datum darf nicht in der Vergangenheit liegen!");
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePickerAnfang, "");
+            }
+
+            // Enddatum automatisch anpassen (falls nötig)
+            if (dateTimePickerEnde.Value <= dateTimePickerAnfang.Value)
+            {
+                dateTimePickerEnde.Value = dateTimePickerAnfang.Value.AddMonths(1);
+            }
+            AktualisiereRate();
+        }
+
+        private void dateTimePickerEnde_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePickerEnde.Value <= dateTimePickerAnfang.Value)
+            {
+                errorProvider1.SetError(dateTimePickerEnde, "Enddatum muss nach Anfangsdatum liegen!");
+            }
+            else
+            {
+                errorProvider1.SetError(dateTimePickerEnde, "");
+            }
+            AktualisiereRate();
+        }
+    
+    private decimal BerechneMonatlicheRate(int fahrzeugId, DateTime beginn, DateTime ende)
+        {
+
+
+       
+            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string preisQuery = "SELECT Listenpreis, Leasingkategorie FROM Fahrzeug WHERE F_ID = @F_ID";
+                MySqlCommand preisCmd = new MySqlCommand(preisQuery, conn);
+                preisCmd.Parameters.AddWithValue("@F_ID", fahrzeugId);
+
+                using (MySqlDataReader reader = preisCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        decimal listenpreis = Convert.ToDecimal(reader["Listenpreis"]);
+                        string kategorie = reader["Leasingkategorie"].ToString();
+
+                        // Debug-Ausgabe zur Überprüfung
+                        Console.WriteLine($"Fahrzeug-ID: {fahrzeugId}, Listenpreis: {listenpreis}, Kategorie: {kategorie}");
+
+                        // Berechne Laufzeit in Monaten
+                        int monate = (ende.Year - beginn.Year) * 12 + ende.Month - beginn.Month;
+                        monate = Math.Max(monate, 1); // Mindestens 1 Monat
+
+                        // Realistische Formel: (Listenpreis * Faktor) / Laufzeit
+                        decimal kategoriefaktor;
+                        switch (kategorie)
+                        {
+                            case "Premium":
+                                kategoriefaktor = 0.02m;
+                                break;
+                            case "Standard":
+                                kategoriefaktor = 0.015m;
+                                break;
+                            default:
+                                kategoriefaktor = 0.01m;
+                                break;
+                        }
+
+                        decimal rate = listenpreis * kategoriefaktor;
+                        rate = Math.Max(rate, 100); // Mindestrate 100€
+
+                        Console.WriteLine($"Berechnete Rate: {rate}"); // Debug
+                        return rate;
+                    }
+                }
+            }
+            return 0; // Fallback
+        }
+
+
+
+
+
+
+
+        private void AktualisiereRate()
+        {
+            if (comboboxFahrzeug.SelectedItem == null) return;
+
+            try
+            {
+                dynamic selectedItem = comboboxFahrzeug.SelectedItem;
+                int fahrzeugId = selectedItem.F_ID;
+
+                decimal rate = BerechneMonatlicheRate(
+                    fahrzeugId,
+                    dateTimePickerAnfang.Value,
+                    dateTimePickerEnde.Value);
+
+                // Formatierung als Währung (z. B. "6.000,00 €")
+                textBoxmrate.Text = rate.ToString("C");
+            }
+            catch (Exception ex)
+            {
+                textBoxmrate.Text = "Fehler";
+                Console.WriteLine($"Fehler in AktualisiereRate: {ex.Message}");
+            }
+        }
+
+
+
+        private void comboboxFahrzeug_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            AktualisiereRate();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ResetAllForms();
+        }
     }
-}
+
+    }
 
