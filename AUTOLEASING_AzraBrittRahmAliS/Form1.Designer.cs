@@ -1264,6 +1264,7 @@
             this.textBoxmrate.BackColor = System.Drawing.Color.LightGray;
             this.textBoxmrate.Location = new System.Drawing.Point(176, 585);
             this.textBoxmrate.Name = "textBoxmrate";
+            this.textBoxmrate.ReadOnly = true;
             this.textBoxmrate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxmrate.Size = new System.Drawing.Size(213, 22);
             this.textBoxmrate.TabIndex = 48;
