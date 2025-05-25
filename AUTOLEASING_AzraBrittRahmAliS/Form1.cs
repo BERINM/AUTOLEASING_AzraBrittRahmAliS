@@ -1166,6 +1166,59 @@ Telefon: {reader["Telefonnummer"]}";
                 }
             }
         }
+        private bool IsValidPayment()
+        {
+            if (comboboxFahrzeug.SelectedItem == null)
+            {
+                MessageBox.Show("Bitte wählen Sie ein Fahrzeug aus.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (dateTimePickerAnfang.Value <= DateTime.Today)
+            {
+                MessageBox.Show("Das Vertragsbeginn-Datum muss in der Zukunft liegen.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (dateTimePickerEnde.Value <= dateTimePickerAnfang.Value)
+            {
+                MessageBox.Show("Das Vertragsende-Datum muss nach dem Beginn liegen.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!IsValidPayment())
+            {
+                return;
+            }
+
+          
+            tabControl1.SelectedTab = tabPage6_Zahlung;
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton1.Enabled = false;
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton2.Enabled = false;
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton3.Enabled = false;
+        }
+
+        private void textBoxmrate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
