@@ -25,7 +25,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         }
         private void LoadFahrzeugComboBox()
         {
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
@@ -58,7 +58,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         }
         private void LoadFahrzeugeData()
         {
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -199,7 +199,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
         private bool CheckEmailExists(string email)
         {
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -230,7 +230,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         {
             try
             {
-                string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                 using (var conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -282,7 +282,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
         private void LoadCustomerData(int kundenId)
         {
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -476,7 +476,7 @@ Telefon: {reader["Telefonnummer"]}";
             }
 
             string email = textBoxEMAIlREG.Text;
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -541,7 +541,7 @@ Telefon: {reader["Telefonnummer"]}";
                 return;
             }
 
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
@@ -687,7 +687,7 @@ Telefon: {reader["Telefonnummer"]}";
                     // Kunden-ID aus dem Label extrahieren
                     int kundenId = int.Parse(labelKundenID.Text.Replace("Kunden-ID: ", ""));
 
-                    string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                    string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
@@ -750,7 +750,7 @@ Telefon: {reader["Telefonnummer"]}";
                     // Kunden-ID aus dem Label extrahieren
                     int kundenId = int.Parse(labelKundenID.Text.Replace("Kunden-ID: ", ""));
 
-                    string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                    string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
@@ -877,7 +877,7 @@ Telefon: {reader["Telefonnummer"]}";
             textBoxmrate.Text = rate.ToString("C"); // Gleiche Formatierung
 
             // 4. Vertrag in Datenbank speichern
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -903,8 +903,8 @@ Telefon: {reader["Telefonnummer"]}";
         private void ErstelleLeasingvertrag()
         {
             try
-            {
-                string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                {
+                    string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -931,7 +931,7 @@ Telefon: {reader["Telefonnummer"]}";
         }
         private int GeneriereNeueVertragsID()
         {
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -981,8 +981,8 @@ Telefon: {reader["Telefonnummer"]}";
         {
 
 
-       
-            string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+
+            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -1067,7 +1067,7 @@ Telefon: {reader["Telefonnummer"]}";
         {
             try
             {
-                string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+               string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
