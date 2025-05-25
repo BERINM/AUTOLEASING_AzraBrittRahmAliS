@@ -110,22 +110,24 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.buttonBearbeitenACC = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.vertragkundelabel = new System.Windows.Forms.Label();
+            this.buttonvertrag = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxmrate = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePickerEnde = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePickerAnfang = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboboxFahrzeug = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboboxFahrzeug = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePickerAnfang = new System.Windows.Forms.DateTimePicker();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePickerEnde = new System.Windows.Forms.DateTimePicker();
-            this.textBoxmrate = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.buttonvertrag = new System.Windows.Forms.Button();
-            this.vertragkundelabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -141,6 +143,7 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -1133,6 +1136,8 @@
             // 
             this.tabPage5.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.hintergrundautoleasing2;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Controls.Add(this.label6);
+            this.tabPage5.Controls.Add(this.pictureBox10);
             this.tabPage5.Controls.Add(this.button2);
             this.tabPage5.Controls.Add(this.vertragkundelabel);
             this.tabPage5.Controls.Add(this.buttonvertrag);
@@ -1155,16 +1160,148 @@
             this.tabPage5.Text = "FAHRZEUGE/VERTRAG";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox10.Location = new System.Drawing.Point(417, 201);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(273, 180);
+            this.pictureBox10.TabIndex = 84;
+            this.pictureBox10.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(129, 155);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 40);
+            this.button2.TabIndex = 83;
+            this.button2.Text = "H";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // vertragkundelabel
+            // 
+            this.vertragkundelabel.AutoSize = true;
+            this.vertragkundelabel.BackColor = System.Drawing.Color.Silver;
+            this.vertragkundelabel.Location = new System.Drawing.Point(129, 398);
+            this.vertragkundelabel.Name = "vertragkundelabel";
+            this.vertragkundelabel.Size = new System.Drawing.Size(22, 16);
+            this.vertragkundelabel.TabIndex = 80;
+            this.vertragkundelabel.Text = "     ";
+            // 
+            // buttonvertrag
+            // 
+            this.buttonvertrag.BackColor = System.Drawing.Color.LightSlateGray;
+            this.buttonvertrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonvertrag.ForeColor = System.Drawing.Color.White;
+            this.buttonvertrag.Location = new System.Drawing.Point(176, 631);
+            this.buttonvertrag.Name = "buttonvertrag";
+            this.buttonvertrag.Size = new System.Drawing.Size(482, 51);
+            this.buttonvertrag.TabIndex = 50;
+            this.buttonvertrag.Text = "V E R T R A G   E R S T E L L E N ";
+            this.buttonvertrag.UseVisualStyleBackColor = false;
+            this.buttonvertrag.Click += new System.EventHandler(this.buttonvertrag_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.White;
+            this.label22.ForeColor = System.Drawing.Color.DarkGray;
+            this.label22.Location = new System.Drawing.Point(414, 439);
+            this.label22.Name = "label22";
+            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label22.Size = new System.Drawing.Size(134, 16);
+            this.label22.TabIndex = 49;
+            this.label22.Text = "MONATLICHE RATE";
+            // 
+            // textBoxmrate
+            // 
+            this.textBoxmrate.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxmrate.Enabled = false;
+            this.textBoxmrate.Location = new System.Drawing.Point(414, 458);
+            this.textBoxmrate.Name = "textBoxmrate";
+            this.textBoxmrate.ReadOnly = true;
+            this.textBoxmrate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxmrate.Size = new System.Drawing.Size(273, 22);
+            this.textBoxmrate.TabIndex = 48;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.White;
+            this.label21.ForeColor = System.Drawing.Color.DarkGray;
+            this.label21.Location = new System.Drawing.Point(414, 508);
+            this.label21.Name = "label21";
+            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label21.Size = new System.Drawing.Size(128, 16);
+            this.label21.TabIndex = 47;
+            this.label21.Text = "VERTRAGSENDE *";
+            // 
+            // dateTimePickerEnde
+            // 
+            this.dateTimePickerEnde.Location = new System.Drawing.Point(417, 527);
+            this.dateTimePickerEnde.Name = "dateTimePickerEnde";
+            this.dateTimePickerEnde.Size = new System.Drawing.Size(270, 22);
+            this.dateTimePickerEnde.TabIndex = 46;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.White;
+            this.label20.ForeColor = System.Drawing.Color.DarkGray;
+            this.label20.Location = new System.Drawing.Point(128, 508);
+            this.label20.Name = "label20";
+            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label20.Size = new System.Drawing.Size(146, 16);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "VERTRAGSANFANG *";
+            // 
+            // dateTimePickerAnfang
+            // 
+            this.dateTimePickerAnfang.Location = new System.Drawing.Point(131, 527);
+            this.dateTimePickerAnfang.Name = "dateTimePickerAnfang";
+            this.dateTimePickerAnfang.Size = new System.Drawing.Size(271, 22);
+            this.dateTimePickerAnfang.TabIndex = 44;
+            this.dateTimePickerAnfang.ValueChanged += new System.EventHandler(this.dateTimePickerAnfang_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(126, 439);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(81, 16);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "FAHRZEUG";
+            // 
+            // comboboxFahrzeug
+            // 
+            this.comboboxFahrzeug.Enabled = false;
+            this.comboboxFahrzeug.FormattingEnabled = true;
+            this.comboboxFahrzeug.Location = new System.Drawing.Point(129, 458);
+            this.comboboxFahrzeug.Name = "comboboxFahrzeug";
+            this.comboboxFahrzeug.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboboxFahrzeug.Size = new System.Drawing.Size(273, 24);
+            this.comboboxFahrzeug.TabIndex = 3;
+            this.comboboxFahrzeug.SelectedIndexChanged += new System.EventHandler(this.comboboxFahrzeug_SelectedIndexChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(176, 201);
+            this.dataGridView1.Location = new System.Drawing.Point(129, 201);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(482, 180);
+            this.dataGridView1.Size = new System.Drawing.Size(273, 180);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -1198,130 +1335,21 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // comboboxFahrzeug
-            // 
-            this.comboboxFahrzeug.FormattingEnabled = true;
-            this.comboboxFahrzeug.Location = new System.Drawing.Point(179, 471);
-            this.comboboxFahrzeug.Name = "comboboxFahrzeug";
-            this.comboboxFahrzeug.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboboxFahrzeug.Size = new System.Drawing.Size(210, 24);
-            this.comboboxFahrzeug.TabIndex = 3;
-            this.comboboxFahrzeug.SelectedIndexChanged += new System.EventHandler(this.comboboxFahrzeug_SelectedIndexChanged_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(176, 452);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(89, 16);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "FAHRZEUG *";
-            // 
-            // dateTimePickerAnfang
-            // 
-            this.dateTimePickerAnfang.Location = new System.Drawing.Point(179, 531);
-            this.dateTimePickerAnfang.Name = "dateTimePickerAnfang";
-            this.dateTimePickerAnfang.Size = new System.Drawing.Size(210, 22);
-            this.dateTimePickerAnfang.TabIndex = 44;
-            this.dateTimePickerAnfang.ValueChanged += new System.EventHandler(this.dateTimePickerAnfang_ValueChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.White;
-            this.label20.ForeColor = System.Drawing.Color.DarkGray;
-            this.label20.Location = new System.Drawing.Point(176, 512);
-            this.label20.Name = "label20";
-            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label20.Size = new System.Drawing.Size(146, 16);
-            this.label20.TabIndex = 45;
-            this.label20.Text = "VERTRAGSANFANG *";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.ForeColor = System.Drawing.Color.DarkGray;
-            this.label21.Location = new System.Drawing.Point(424, 512);
-            this.label21.Name = "label21";
-            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label21.Size = new System.Drawing.Size(128, 16);
-            this.label21.TabIndex = 47;
-            this.label21.Text = "VERTRAGSENDE *";
-            // 
-            // dateTimePickerEnde
-            // 
-            this.dateTimePickerEnde.Location = new System.Drawing.Point(427, 531);
-            this.dateTimePickerEnde.Name = "dateTimePickerEnde";
-            this.dateTimePickerEnde.Size = new System.Drawing.Size(210, 22);
-            this.dateTimePickerEnde.TabIndex = 46;
-            // 
-            // textBoxmrate
-            // 
-            this.textBoxmrate.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxmrate.Location = new System.Drawing.Point(176, 585);
-            this.textBoxmrate.Name = "textBoxmrate";
-            this.textBoxmrate.ReadOnly = true;
-            this.textBoxmrate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxmrate.Size = new System.Drawing.Size(213, 22);
-            this.textBoxmrate.TabIndex = 48;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.White;
-            this.label22.ForeColor = System.Drawing.Color.DarkGray;
-            this.label22.Location = new System.Drawing.Point(176, 566);
-            this.label22.Name = "label22";
-            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label22.Size = new System.Drawing.Size(104, 16);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "monatliche Rate";
-            // 
-            // buttonvertrag
-            // 
-            this.buttonvertrag.BackColor = System.Drawing.Color.LightSlateGray;
-            this.buttonvertrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonvertrag.ForeColor = System.Drawing.Color.White;
-            this.buttonvertrag.Location = new System.Drawing.Point(176, 631);
-            this.buttonvertrag.Name = "buttonvertrag";
-            this.buttonvertrag.Size = new System.Drawing.Size(482, 51);
-            this.buttonvertrag.TabIndex = 50;
-            this.buttonvertrag.Text = "V E R T R A G   E R S T E L L E N ";
-            this.buttonvertrag.UseVisualStyleBackColor = false;
-            this.buttonvertrag.Click += new System.EventHandler(this.buttonvertrag_Click);
-            // 
-            // vertragkundelabel
-            // 
-            this.vertragkundelabel.AutoSize = true;
-            this.vertragkundelabel.BackColor = System.Drawing.Color.Silver;
-            this.vertragkundelabel.Location = new System.Drawing.Point(176, 421);
-            this.vertragkundelabel.Name = "vertragkundelabel";
-            this.vertragkundelabel.Size = new System.Drawing.Size(22, 16);
-            this.vertragkundelabel.TabIndex = 80;
-            this.vertragkundelabel.Text = "     ";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(140, 155);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 40);
-            this.button2.TabIndex = 83;
-            this.button2.Text = "H";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkGray;
+            this.label6.Location = new System.Drawing.Point(571, 685);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(87, 15);
+            this.label6.TabIndex = 98;
+            this.label6.Text = "* = erforderlich";
             // 
             // Form1
             // 
@@ -1355,6 +1383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -1462,6 +1491,8 @@
         private System.Windows.Forms.Label vertragkundelabel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label6;
     }
 }
 

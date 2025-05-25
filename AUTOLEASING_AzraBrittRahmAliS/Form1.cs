@@ -23,34 +23,31 @@ namespace AUTOLEASING_AzraBrittRahmAliS
             dateTimePickerAnfang.MinDate = DateTime.Today;
             dateTimePickerEnde.MinDate = DateTime.Today.AddDays(1);
         }
-
         private void LoadFahrzeugComboBox()
         {
-          
             string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT F_ID, CONCAT(Hersteller, ' ', Modell) AS FahrzeugInfo FROM Fahrzeug";
+                    string query = "SELECT F_ID, CONCAT(Hersteller, ' ', Modell) AS FahrzeugInfo, Bildpfad FROM Fahrzeug";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     comboboxFahrzeug.Items.Clear();
                     while (reader.Read())
                     {
-                        // Füge ein Objekt mit ID und Text hinzu
                         comboboxFahrzeug.Items.Add(new
                         {
-                            F_ID = Convert.ToInt32(reader["F_ID"]), // ID als Zahl
-                            DisplayText = reader["FahrzeugInfo"].ToString() // Anzeigetext
+                            F_ID = Convert.ToInt32(reader["F_ID"]),
+                            DisplayText = reader["FahrzeugInfo"].ToString(),
+                            Bildpfad = reader["Bildpfad"]?.ToString() ?? $"{reader["Hersteller"].ToString().ToLower()}_{reader["Modell"].ToString().ToLower().Replace(" ", "_")}.png"
                         });
                     }
 
-                    // Textanzeige konfigurieren
-                    comboboxFahrzeug.DisplayMember = "DisplayText"; // Zeigt "BMW i4" an
-                    comboboxFahrzeug.ValueMember = "F_ID";          // Speichert die ID (z. B. 1)
+                    comboboxFahrzeug.DisplayMember = "DisplayText";
+                    comboboxFahrzeug.ValueMember = "F_ID";
                 }
                 catch (Exception ex)
                 {
@@ -68,7 +65,6 @@ namespace AUTOLEASING_AzraBrittRahmAliS
                 try
                 {
                     conn.Open();
-
                     string query = "SELECT * FROM Fahrzeug";
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
@@ -76,23 +72,26 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
                     dataGridView1.DataSource = dt;
 
-                    // Spaltenreihenfolge festlegen
-                    dataGridView1.Columns["F_ID"].DisplayIndex = 0;
-                    dataGridView1.Columns["Hersteller"].DisplayIndex = 1;
-                    dataGridView1.Columns["Modell"].DisplayIndex = 2;
-                    dataGridView1.Columns["Farbe"].DisplayIndex = 3;
-                    dataGridView1.Columns["Listenpreis"].DisplayIndex = 4;
-                    dataGridView1.Columns["Baujahr"].DisplayIndex = 5;
-                    dataGridView1.Columns["Leasingkategorie"].DisplayIndex = 6;
+                    // Spaltenreihenfolge und Sichtbarkeit anpassen
+                    dataGridView1.Columns["F_ID"].Visible = false;         // Fahrzeug-ID ausblenden
+                    dataGridView1.Columns["Bildpfad"].Visible = false;     // Bildpfad ausblenden
+
+                    // Sichtbare Spalten konfigurieren
+                    dataGridView1.Columns["Hersteller"].DisplayIndex = 0;
+                    dataGridView1.Columns["Modell"].DisplayIndex = 1;
+                    dataGridView1.Columns["Farbe"].DisplayIndex = 2;
+                    dataGridView1.Columns["Listenpreis"].DisplayIndex = 3;
+                    dataGridView1.Columns["Baujahr"].DisplayIndex = 4;
+                    dataGridView1.Columns["Leasingkategorie"].DisplayIndex = 5;
 
                     // Header-Texte und Formatierungen
-                    dataGridView1.Columns["F_ID"].HeaderText = "Fahrzeug-ID";
+                    dataGridView1.Columns["Listenpreis"].HeaderText = "Preis (€)";
                     dataGridView1.Columns["Listenpreis"].DefaultCellStyle.Format = "C2";
                     dataGridView1.ReadOnly = true;
                     dataGridView1.AutoResizeColumns();
 
-                    // Nach ganz links scrollen
-                    dataGridView1.FirstDisplayedScrollingColumnIndex = 0;
+                    // KEINE automatische Auswahl der ersten Zeile
+                    dataGridView1.ClearSelection();  // <-- HIER EINFÜGEN
                 }
                 catch (Exception ex)
                 {
@@ -100,7 +99,6 @@ namespace AUTOLEASING_AzraBrittRahmAliS
                 }
             }
         }
-
 
 
         private void InitializeUI()
@@ -128,6 +126,11 @@ namespace AUTOLEASING_AzraBrittRahmAliS
             buttonVerifyCode.Visible = false;
             textBoxNewPassword.Visible = false;
 
+            // Nur Einfachauswahl erlauben
+            dataGridView1.MultiSelect = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            comboboxFahrzeug.SelectedIndexChanged += comboboxFahrzeug_SelectedIndexChanged;
         }
 
 
@@ -440,6 +443,8 @@ Telefon: {reader["Telefonnummer"]}";
             dateTimePickerAnfang.Value = DateTime.Today;
             dateTimePickerEnde.Value = DateTime.Today.AddMonths(1); // Standardmäßig 1 Monat Laufzeit
             this.comboboxFahrzeug.SelectedIndex = -1;
+            dataGridView1.ClearSelection();
+            pictureBox10.Image = null; // Bild zurücksetzen
 
         }
 
@@ -1026,11 +1031,6 @@ Telefon: {reader["Telefonnummer"]}";
         }
 
 
-
-
-
-
-
         private void AktualisiereRate()
         {
             if (comboboxFahrzeug.SelectedItem == null) return;
@@ -1057,16 +1057,116 @@ Telefon: {reader["Telefonnummer"]}";
 
 
 
-        private void comboboxFahrzeug_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            AktualisiereRate();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ResetAllForms();
         }
+      
+        private void ShowImage(int fahrzeugId)
+        {
+            try
+            {
+                string connectionString = "Server=localhost;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT Bildpfad, Hersteller, Modell FROM Fahrzeug WHERE F_ID = @F_ID";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@F_ID", fahrzeugId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string imageName = reader["Bildpfad"]?.ToString();
+
+                            // Falls Bildpfad nicht in DB, generiere aus Hersteller und Modell
+                            if (string.IsNullOrEmpty(imageName))
+                            {
+                                string hersteller = reader["Hersteller"].ToString().ToLower();
+                                string modell = reader["Modell"].ToString().ToLower().Replace(" ", "_");
+                                imageName = $"{hersteller}_{modell}.png";
+                            }
+
+                            string imagePath = Path.Combine(Application.StartupPath, "bilder_Fahrzeuge", imageName);
+
+                            if (File.Exists(imagePath))
+                            {
+                                pictureBox10.Image = Image.FromFile(imagePath);
+                                pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+                            }
+                            else
+                            {
+
+                                // With this line:
+                                pictureBox10.Image = Properties.Resources.Fahrzeuge; // Use an existing resource as a placeholder
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Laden des Bildes: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Add this method to handle the SelectedIndexChanged event for comboboxFahrzeug
+        
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                if (selectedRow.Cells["F_ID"].Value != null)
+                {
+                    int fahrzeugId = Convert.ToInt32(selectedRow.Cells["F_ID"].Value);
+                    ShowImage(fahrzeugId);
+
+                    // Combobox synchronisieren
+                    foreach (var item in comboboxFahrzeug.Items)
+                    {
+                        dynamic comboItem = item;
+                        if (comboItem.F_ID == fahrzeugId)
+                        {
+                            comboboxFahrzeug.SelectedItem = item;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void comboboxFahrzeug_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboboxFahrzeug.SelectedItem != null)
+            {
+                dynamic selectedItem = comboboxFahrzeug.SelectedItem;
+                int fahrzeugId = selectedItem.F_ID;
+
+                // Bild anzeigen
+                ShowImage(fahrzeugId);
+
+                // Monatliche Rate berechnen und anzeigen
+                AktualisiereRate();
+
+                // DataGridView-Zeile markieren
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["F_ID"].Value != null &&
+                        Convert.ToInt32(row.Cells["F_ID"].Value) == fahrzeugId)
+                    {
+                        dataGridView1.ClearSelection();
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
-    }
+}
 
