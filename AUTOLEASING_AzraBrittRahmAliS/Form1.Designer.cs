@@ -124,7 +124,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePickerAnfang = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboboxFahrzeug = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -145,6 +144,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
+            this.textBox2_Fahrzeuge = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -1243,6 +1243,7 @@
             // 
             this.tabPage5.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.hintergrundautoleasing2;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Controls.Add(this.textBox2_Fahrzeuge);
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Controls.Add(this.pictureBox10);
@@ -1256,7 +1257,6 @@
             this.tabPage5.Controls.Add(this.label20);
             this.tabPage5.Controls.Add(this.dateTimePickerAnfang);
             this.tabPage5.Controls.Add(this.label5);
-            this.tabPage5.Controls.Add(this.comboboxFahrzeug);
             this.tabPage5.Controls.Add(this.dataGridView1);
             this.tabPage5.Controls.Add(this.pictureBox8);
             this.tabPage5.Controls.Add(this.pictureBox9);
@@ -1274,10 +1274,10 @@
             this.button1.BackColor = System.Drawing.Color.LightSlateGray;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(140, 533);
+            this.button1.Location = new System.Drawing.Point(100, 525);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(362, 41);
+            this.button1.Size = new System.Drawing.Size(418, 41);
             this.button1.TabIndex = 99;
             this.button1.Text = "J E T Z T  B E Z A H L E N ";
             this.button1.UseVisualStyleBackColor = false;
@@ -1288,7 +1288,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(442, 518);
+            this.label6.Location = new System.Drawing.Point(442, 568);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1338,10 +1338,10 @@
             this.buttonvertrag.BackColor = System.Drawing.Color.LightSlateGray;
             this.buttonvertrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonvertrag.ForeColor = System.Drawing.Color.White;
-            this.buttonvertrag.Location = new System.Drawing.Point(140, 475);
+            this.buttonvertrag.Location = new System.Drawing.Point(97, 475);
             this.buttonvertrag.Margin = new System.Windows.Forms.Padding(2);
             this.buttonvertrag.Name = "buttonvertrag";
-            this.buttonvertrag.Size = new System.Drawing.Size(362, 41);
+            this.buttonvertrag.Size = new System.Drawing.Size(421, 41);
             this.buttonvertrag.TabIndex = 50;
             this.buttonvertrag.Text = "V E R T R A G   E R S T E L L E N ";
             this.buttonvertrag.UseVisualStyleBackColor = false;
@@ -1428,18 +1428,6 @@
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 39;
             this.label5.Text = "FAHRZEUG";
-            // 
-            // comboboxFahrzeug
-            // 
-            this.comboboxFahrzeug.Enabled = false;
-            this.comboboxFahrzeug.FormattingEnabled = true;
-            this.comboboxFahrzeug.Location = new System.Drawing.Point(97, 372);
-            this.comboboxFahrzeug.Margin = new System.Windows.Forms.Padding(2);
-            this.comboboxFahrzeug.Name = "comboboxFahrzeug";
-            this.comboboxFahrzeug.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboboxFahrzeug.Size = new System.Drawing.Size(206, 21);
-            this.comboboxFahrzeug.TabIndex = 3;
-            this.comboboxFahrzeug.SelectedIndexChanged += new System.EventHandler(this.comboboxFahrzeug_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -1699,6 +1687,18 @@
             this.label28.TabIndex = 98;
             this.label28.Text = "ZAHLUNGSDATUM *";
             // 
+            // textBox2_Fahrzeuge
+            // 
+            this.textBox2_Fahrzeuge.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2_Fahrzeuge.Enabled = false;
+            this.textBox2_Fahrzeuge.Location = new System.Drawing.Point(100, 372);
+            this.textBox2_Fahrzeuge.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2_Fahrzeuge.Name = "textBox2_Fahrzeuge";
+            this.textBox2_Fahrzeuge.ReadOnly = true;
+            this.textBox2_Fahrzeuge.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2_Fahrzeuge.Size = new System.Drawing.Size(206, 20);
+            this.textBox2_Fahrzeuge.TabIndex = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1832,7 +1832,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.ComboBox comboboxFahrzeug;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnde;
@@ -1863,6 +1862,7 @@
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox2_Fahrzeuge;
     }
 }
 
