@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.buttonSTARTJetzt_REGRI = new System.Windows.Forms.Button();
@@ -111,7 +110,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.buttonBearbeitenACC = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2_Fahrzeuge = new System.Windows.Forms.TextBox();
+            this.buttonjetztbezahlen = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -128,25 +128,26 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.tabPage6_Zahlung = new System.Windows.Forms.TabPage();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label23_KID = new System.Windows.Forms.Label();
-            this.label24_V_ID = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.dateTimePickerZahlungsfrist = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewZahlung = new System.Windows.Forms.DataGridView();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label27 = new System.Windows.Forms.Label();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxbetrag = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.label27 = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox2_Fahrzeuge = new System.Windows.Forms.TextBox();
+            this.label24_V_ID = new System.Windows.Forms.Label();
+            this.label23_KID = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label23ZID = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -166,9 +167,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.tabPage6_Zahlung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZahlung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -179,17 +181,13 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6_Zahlung);
-            this.tabControl1.Location = new System.Drawing.Point(2, -1);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(3, -1);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(620, 713);
+            this.tabControl1.Size = new System.Drawing.Size(827, 878);
             this.tabControl1.TabIndex = 4;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // tabPage1
             // 
@@ -201,11 +199,11 @@
             this.tabPage1.Controls.Add(this.buttonSTART_LOGIN);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.pictureBox4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(612, 687);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(819, 849);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "START-KUNDE";
             // 
@@ -214,10 +212,10 @@
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(220, 262);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Location = new System.Drawing.Point(293, 322);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(185, 152);
+            this.pictureBox7.Size = new System.Drawing.Size(247, 187);
             this.pictureBox7.TabIndex = 10;
             this.pictureBox7.TabStop = false;
             // 
@@ -226,10 +224,10 @@
             this.buttonSTARTJetzt_REGRI.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonSTARTJetzt_REGRI.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSTARTJetzt_REGRI.ForeColor = System.Drawing.Color.White;
-            this.buttonSTARTJetzt_REGRI.Location = new System.Drawing.Point(125, 531);
-            this.buttonSTARTJetzt_REGRI.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSTARTJetzt_REGRI.Location = new System.Drawing.Point(167, 654);
+            this.buttonSTARTJetzt_REGRI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSTARTJetzt_REGRI.Name = "buttonSTARTJetzt_REGRI";
-            this.buttonSTARTJetzt_REGRI.Size = new System.Drawing.Size(364, 41);
+            this.buttonSTARTJetzt_REGRI.Size = new System.Drawing.Size(485, 50);
             this.buttonSTARTJetzt_REGRI.TabIndex = 8;
             this.buttonSTARTJetzt_REGRI.Text = "J E T Z T  R E G I S T I R I E N";
             this.buttonSTARTJetzt_REGRI.UseVisualStyleBackColor = false;
@@ -240,10 +238,10 @@
             this.buttonSTART_LOGIN.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonSTART_LOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSTART_LOGIN.ForeColor = System.Drawing.Color.White;
-            this.buttonSTART_LOGIN.Location = new System.Drawing.Point(125, 484);
-            this.buttonSTART_LOGIN.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSTART_LOGIN.Location = new System.Drawing.Point(167, 596);
+            this.buttonSTART_LOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSTART_LOGIN.Name = "buttonSTART_LOGIN";
-            this.buttonSTART_LOGIN.Size = new System.Drawing.Size(364, 41);
+            this.buttonSTART_LOGIN.Size = new System.Drawing.Size(485, 50);
             this.buttonSTART_LOGIN.TabIndex = 7;
             this.buttonSTART_LOGIN.Text = "L O G I N";
             this.buttonSTART_LOGIN.UseVisualStyleBackColor = false;
@@ -254,10 +252,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(88, 117);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(117, 144);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(435, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(580, 256);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -266,10 +264,10 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(82, 349);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(109, 430);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(450, 185);
+            this.pictureBox4.Size = new System.Drawing.Size(600, 228);
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
@@ -297,11 +295,11 @@
             this.tabPage2.Controls.Add(this.button2REG);
             this.tabPage2.Controls.Add(this.pictureBox3);
             this.tabPage2.Controls.Add(this.textBoxNachNREG);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(612, 687);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(819, 849);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "REGISTRIEREN (INSERT)";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -314,12 +312,12 @@
             this.groupBox2.Controls.Add(this.radioButtonMaennlichREG);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox2.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox2.Location = new System.Drawing.Point(333, 301);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(444, 370);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox2.Size = new System.Drawing.Size(160, 36);
+            this.groupBox2.Size = new System.Drawing.Size(213, 44);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "GESCHLECHT  *";
@@ -327,10 +325,10 @@
             // radioButtonDIversREG
             // 
             this.radioButtonDIversREG.AutoSize = true;
-            this.radioButtonDIversREG.Location = new System.Drawing.Point(116, 16);
-            this.radioButtonDIversREG.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonDIversREG.Location = new System.Drawing.Point(155, 20);
+            this.radioButtonDIversREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonDIversREG.Name = "radioButtonDIversREG";
-            this.radioButtonDIversREG.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonDIversREG.Size = new System.Drawing.Size(36, 20);
             this.radioButtonDIversREG.TabIndex = 34;
             this.radioButtonDIversREG.TabStop = true;
             this.radioButtonDIversREG.Text = "d";
@@ -339,10 +337,10 @@
             // radioButtonWeiblichREG
             // 
             this.radioButtonWeiblichREG.AutoSize = true;
-            this.radioButtonWeiblichREG.Location = new System.Drawing.Point(63, 16);
-            this.radioButtonWeiblichREG.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonWeiblichREG.Location = new System.Drawing.Point(84, 20);
+            this.radioButtonWeiblichREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonWeiblichREG.Name = "radioButtonWeiblichREG";
-            this.radioButtonWeiblichREG.Size = new System.Drawing.Size(33, 17);
+            this.radioButtonWeiblichREG.Size = new System.Drawing.Size(37, 20);
             this.radioButtonWeiblichREG.TabIndex = 33;
             this.radioButtonWeiblichREG.TabStop = true;
             this.radioButtonWeiblichREG.Text = "w";
@@ -351,10 +349,10 @@
             // radioButtonMaennlichREG
             // 
             this.radioButtonMaennlichREG.AutoSize = true;
-            this.radioButtonMaennlichREG.Location = new System.Drawing.Point(6, 16);
-            this.radioButtonMaennlichREG.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonMaennlichREG.Location = new System.Drawing.Point(8, 20);
+            this.radioButtonMaennlichREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonMaennlichREG.Name = "radioButtonMaennlichREG";
-            this.radioButtonMaennlichREG.Size = new System.Drawing.Size(33, 17);
+            this.radioButtonMaennlichREG.Size = new System.Drawing.Size(39, 20);
             this.radioButtonMaennlichREG.TabIndex = 32;
             this.radioButtonMaennlichREG.TabStop = true;
             this.radioButtonMaennlichREG.Text = "m";
@@ -367,12 +365,12 @@
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox1.Location = new System.Drawing.Point(333, 301);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(444, 370);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(160, 36);
+            this.groupBox1.Size = new System.Drawing.Size(213, 44);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GESCHLECHT  *";
@@ -380,10 +378,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(116, 16);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton3.Location = new System.Drawing.Point(155, 20);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(31, 17);
+            this.radioButton3.Size = new System.Drawing.Size(36, 20);
             this.radioButton3.TabIndex = 34;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "d";
@@ -392,10 +390,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(63, 16);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Location = new System.Drawing.Point(84, 20);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(33, 17);
+            this.radioButton2.Size = new System.Drawing.Size(37, 20);
             this.radioButton2.TabIndex = 33;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "w";
@@ -404,10 +402,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 16);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Location = new System.Drawing.Point(8, 20);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(33, 17);
+            this.radioButton1.Size = new System.Drawing.Size(39, 20);
             this.radioButton1.TabIndex = 32;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "m";
@@ -418,11 +416,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkGray;
-            this.label4.Location = new System.Drawing.Point(422, 574);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(563, 706);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(87, 15);
             this.label4.TabIndex = 51;
             this.label4.Text = "* = erforderlich";
             // 
@@ -433,10 +430,10 @@
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(98, 133);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Location = new System.Drawing.Point(131, 164);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(31, 32);
+            this.button5.Size = new System.Drawing.Size(41, 39);
             this.button5.TabIndex = 50;
             this.button5.Text = "H";
             this.button5.UseVisualStyleBackColor = false;
@@ -447,22 +444,21 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.ForeColor = System.Drawing.Color.DarkGray;
-            this.label12.Location = new System.Drawing.Point(127, 237);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(169, 292);
             this.label12.Name = "label12";
             this.label12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label12.Size = new System.Drawing.Size(68, 13);
+            this.label12.Size = new System.Drawing.Size(83, 16);
             this.label12.TabIndex = 38;
             this.label12.Text = "VORNAME *";
             // 
             // textBoxVorNREG
             // 
             this.textBoxVorNREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxVorNREG.Location = new System.Drawing.Point(129, 255);
-            this.textBoxVorNREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVorNREG.Location = new System.Drawing.Point(172, 314);
+            this.textBoxVorNREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxVorNREG.Name = "textBoxVorNREG";
             this.textBoxVorNREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxVorNREG.Size = new System.Drawing.Size(161, 20);
+            this.textBoxVorNREG.Size = new System.Drawing.Size(213, 22);
             this.textBoxVorNREG.TabIndex = 34;
             // 
             // label1
@@ -470,23 +466,22 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(331, 427);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(441, 526);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 49;
             this.label1.Text = "PASSWORT *";
             // 
             // textBox3PasswortEREG
             // 
             this.textBox3PasswortEREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBox3PasswortEREG.Location = new System.Drawing.Point(333, 442);
-            this.textBox3PasswortEREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3PasswortEREG.Location = new System.Drawing.Point(444, 544);
+            this.textBox3PasswortEREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3PasswortEREG.MaxLength = 8;
             this.textBox3PasswortEREG.Name = "textBox3PasswortEREG";
             this.textBox3PasswortEREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox3PasswortEREG.Size = new System.Drawing.Size(161, 20);
+            this.textBox3PasswortEREG.Size = new System.Drawing.Size(213, 22);
             this.textBox3PasswortEREG.TabIndex = 48;
             // 
             // label7
@@ -494,22 +489,21 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.ForeColor = System.Drawing.Color.DarkGray;
-            this.label7.Location = new System.Drawing.Point(127, 427);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(169, 526);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.Size = new System.Drawing.Size(123, 16);
             this.label7.TabIndex = 47;
             this.label7.Text = "EMAIL-ADRESSE *";
             // 
             // textBoxEMAIlREG
             // 
             this.textBoxEMAIlREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxEMAIlREG.Location = new System.Drawing.Point(129, 442);
-            this.textBoxEMAIlREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEMAIlREG.Location = new System.Drawing.Point(172, 544);
+            this.textBoxEMAIlREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEMAIlREG.Name = "textBoxEMAIlREG";
             this.textBoxEMAIlREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxEMAIlREG.Size = new System.Drawing.Size(161, 20);
+            this.textBoxEMAIlREG.Size = new System.Drawing.Size(213, 22);
             this.textBoxEMAIlREG.TabIndex = 46;
             // 
             // label8
@@ -517,22 +511,21 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.ForeColor = System.Drawing.Color.DarkGray;
-            this.label8.Location = new System.Drawing.Point(331, 368);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(441, 453);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(112, 13);
+            this.label8.Size = new System.Drawing.Size(138, 16);
             this.label8.TabIndex = 45;
             this.label8.Text = "TELEFONNUMMER *";
             // 
             // textBoxTelefonummerREG
             // 
             this.textBoxTelefonummerREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxTelefonummerREG.Location = new System.Drawing.Point(333, 384);
-            this.textBoxTelefonummerREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTelefonummerREG.Location = new System.Drawing.Point(444, 473);
+            this.textBoxTelefonummerREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTelefonummerREG.Name = "textBoxTelefonummerREG";
             this.textBoxTelefonummerREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxTelefonummerREG.Size = new System.Drawing.Size(158, 20);
+            this.textBoxTelefonummerREG.Size = new System.Drawing.Size(209, 22);
             this.textBoxTelefonummerREG.TabIndex = 44;
             // 
             // label9
@@ -540,22 +533,21 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.ForeColor = System.Drawing.Color.DarkGray;
-            this.label9.Location = new System.Drawing.Point(127, 366);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(169, 450);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 43;
             this.label9.Text = "ADRESSE *";
             // 
             // textBoxAdresseREG
             // 
             this.textBoxAdresseREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxAdresseREG.Location = new System.Drawing.Point(129, 384);
-            this.textBoxAdresseREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxAdresseREG.Location = new System.Drawing.Point(172, 473);
+            this.textBoxAdresseREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAdresseREG.Name = "textBoxAdresseREG";
             this.textBoxAdresseREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxAdresseREG.Size = new System.Drawing.Size(161, 20);
+            this.textBoxAdresseREG.Size = new System.Drawing.Size(213, 22);
             this.textBoxAdresseREG.TabIndex = 42;
             // 
             // label10
@@ -563,20 +555,19 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.ForeColor = System.Drawing.Color.DarkGray;
-            this.label10.Location = new System.Drawing.Point(331, 237);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(441, 292);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label10.Size = new System.Drawing.Size(105, 13);
+            this.label10.Size = new System.Drawing.Size(130, 16);
             this.label10.TabIndex = 41;
             this.label10.Text = "GEBURTSDATUM *";
             // 
             // dateTimePickerGeburtsdatumREG
             // 
-            this.dateTimePickerGeburtsdatumREG.Location = new System.Drawing.Point(333, 255);
-            this.dateTimePickerGeburtsdatumREG.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerGeburtsdatumREG.Location = new System.Drawing.Point(444, 314);
+            this.dateTimePickerGeburtsdatumREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerGeburtsdatumREG.Name = "dateTimePickerGeburtsdatumREG";
-            this.dateTimePickerGeburtsdatumREG.Size = new System.Drawing.Size(158, 20);
+            this.dateTimePickerGeburtsdatumREG.Size = new System.Drawing.Size(209, 22);
             this.dateTimePickerGeburtsdatumREG.TabIndex = 40;
             // 
             // label11
@@ -584,11 +575,10 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.ForeColor = System.Drawing.Color.DarkGray;
-            this.label11.Location = new System.Drawing.Point(127, 301);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(169, 370);
             this.label11.Name = "label11";
             this.label11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label11.Size = new System.Drawing.Size(75, 13);
+            this.label11.Size = new System.Drawing.Size(92, 16);
             this.label11.TabIndex = 39;
             this.label11.Text = "NACHNAME *";
             // 
@@ -597,10 +587,10 @@
             this.button2REG.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2REG.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2REG.ForeColor = System.Drawing.Color.White;
-            this.button2REG.Location = new System.Drawing.Point(129, 530);
-            this.button2REG.Margin = new System.Windows.Forms.Padding(2);
+            this.button2REG.Location = new System.Drawing.Point(172, 652);
+            this.button2REG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2REG.Name = "button2REG";
-            this.button2REG.Size = new System.Drawing.Size(362, 41);
+            this.button2REG.Size = new System.Drawing.Size(483, 50);
             this.button2REG.TabIndex = 37;
             this.button2REG.Text = "A N M E L D E N";
             this.button2REG.UseVisualStyleBackColor = false;
@@ -611,21 +601,21 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(135, 79);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(180, 97);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(356, 147);
+            this.pictureBox3.Size = new System.Drawing.Size(475, 181);
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
             // 
             // textBoxNachNREG
             // 
             this.textBoxNachNREG.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxNachNREG.Location = new System.Drawing.Point(129, 318);
-            this.textBoxNachNREG.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNachNREG.Location = new System.Drawing.Point(172, 391);
+            this.textBoxNachNREG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNachNREG.Name = "textBoxNachNREG";
             this.textBoxNachNREG.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxNachNREG.Size = new System.Drawing.Size(161, 20);
+            this.textBoxNachNREG.Size = new System.Drawing.Size(213, 22);
             this.textBoxNachNREG.TabIndex = 36;
             // 
             // tabPage3
@@ -649,11 +639,11 @@
             this.tabPage3.Controls.Add(this.buttonLOGIN);
             this.tabPage3.Controls.Add(this.textBoxLOGINpasswort);
             this.tabPage3.Controls.Add(this.textBoxloginEMAIL);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(612, 687);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Size = new System.Drawing.Size(819, 849);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "LOGIN";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -663,10 +653,10 @@
             this.buttonUpdatePassword.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonUpdatePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdatePassword.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdatePassword.Location = new System.Drawing.Point(127, 480);
-            this.buttonUpdatePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdatePassword.Location = new System.Drawing.Point(167, 647);
+            this.buttonUpdatePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdatePassword.Name = "buttonUpdatePassword";
-            this.buttonUpdatePassword.Size = new System.Drawing.Size(365, 41);
+            this.buttonUpdatePassword.Size = new System.Drawing.Size(487, 50);
             this.buttonUpdatePassword.TabIndex = 61;
             this.buttonUpdatePassword.Text = "U P D A T E";
             this.buttonUpdatePassword.UseVisualStyleBackColor = false;
@@ -678,11 +668,10 @@
             this.labelConfirmPassword.AutoSize = true;
             this.labelConfirmPassword.BackColor = System.Drawing.Color.White;
             this.labelConfirmPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelConfirmPassword.Location = new System.Drawing.Point(128, 318);
-            this.labelConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelConfirmPassword.Location = new System.Drawing.Point(171, 391);
             this.labelConfirmPassword.Name = "labelConfirmPassword";
             this.labelConfirmPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelConfirmPassword.Size = new System.Drawing.Size(49, 13);
+            this.labelConfirmPassword.Size = new System.Drawing.Size(60, 16);
             this.labelConfirmPassword.TabIndex = 60;
             this.labelConfirmPassword.Text = "Confirm *";
             this.labelConfirmPassword.Visible = false;
@@ -692,10 +681,10 @@
             this.buttonVerifyCode.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonVerifyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVerifyCode.ForeColor = System.Drawing.Color.White;
-            this.buttonVerifyCode.Location = new System.Drawing.Point(124, 421);
-            this.buttonVerifyCode.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonVerifyCode.Location = new System.Drawing.Point(165, 647);
+            this.buttonVerifyCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonVerifyCode.Name = "buttonVerifyCode";
-            this.buttonVerifyCode.Size = new System.Drawing.Size(365, 41);
+            this.buttonVerifyCode.Size = new System.Drawing.Size(487, 50);
             this.buttonVerifyCode.TabIndex = 56;
             this.buttonVerifyCode.Text = "V E R I F I Z I E R E N";
             this.buttonVerifyCode.UseVisualStyleBackColor = false;
@@ -707,11 +696,10 @@
             this.labelNewPassword.AutoSize = true;
             this.labelNewPassword.BackColor = System.Drawing.Color.White;
             this.labelNewPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelNewPassword.Location = new System.Drawing.Point(128, 253);
-            this.labelNewPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNewPassword.Location = new System.Drawing.Point(171, 311);
             this.labelNewPassword.Name = "labelNewPassword";
             this.labelNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelNewPassword.Size = new System.Drawing.Size(82, 13);
+            this.labelNewPassword.Size = new System.Drawing.Size(102, 16);
             this.labelNewPassword.TabIndex = 59;
             this.labelNewPassword.Text = "NewPassword *";
             this.labelNewPassword.Visible = false;
@@ -719,11 +707,11 @@
             // textBoxConfirmPassword
             // 
             this.textBoxConfirmPassword.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(130, 336);
-            this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(173, 414);
+            this.textBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             this.textBoxConfirmPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxConfirmPassword.Size = new System.Drawing.Size(362, 20);
+            this.textBoxConfirmPassword.Size = new System.Drawing.Size(481, 22);
             this.textBoxConfirmPassword.TabIndex = 58;
             this.textBoxConfirmPassword.Visible = false;
             // 
@@ -732,11 +720,10 @@
             this.labelVerification.AutoSize = true;
             this.labelVerification.BackColor = System.Drawing.Color.White;
             this.labelVerification.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelVerification.Location = new System.Drawing.Point(126, 291);
-            this.labelVerification.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelVerification.Location = new System.Drawing.Point(168, 358);
             this.labelVerification.Name = "labelVerification";
             this.labelVerification.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelVerification.Size = new System.Drawing.Size(85, 13);
+            this.labelVerification.Size = new System.Drawing.Size(103, 16);
             this.labelVerification.TabIndex = 55;
             this.labelVerification.Text = "VERFIKATION *";
             this.labelVerification.Visible = false;
@@ -744,21 +731,21 @@
             // textBoxNewPassword
             // 
             this.textBoxNewPassword.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxNewPassword.Location = new System.Drawing.Point(128, 272);
-            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNewPassword.Location = new System.Drawing.Point(171, 335);
+            this.textBoxNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNewPassword.Name = "textBoxNewPassword";
             this.textBoxNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxNewPassword.Size = new System.Drawing.Size(362, 20);
+            this.textBoxNewPassword.Size = new System.Drawing.Size(481, 22);
             this.textBoxNewPassword.TabIndex = 57;
             // 
             // textBoxVerificationCode
             // 
             this.textBoxVerificationCode.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxVerificationCode.Location = new System.Drawing.Point(128, 306);
-            this.textBoxVerificationCode.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVerificationCode.Location = new System.Drawing.Point(171, 377);
+            this.textBoxVerificationCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxVerificationCode.Name = "textBoxVerificationCode";
             this.textBoxVerificationCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxVerificationCode.Size = new System.Drawing.Size(362, 20);
+            this.textBoxVerificationCode.Size = new System.Drawing.Size(481, 22);
             this.textBoxVerificationCode.TabIndex = 54;
             this.textBoxVerificationCode.Visible = false;
             // 
@@ -767,11 +754,10 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.White;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.linkLabel1.Location = new System.Drawing.Point(128, 360);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(171, 443);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.linkLabel1.Size = new System.Drawing.Size(108, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(136, 16);
             this.linkLabel1.TabIndex = 53;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Passwort vergessen?";
@@ -783,11 +769,10 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkGray;
-            this.label13.Location = new System.Drawing.Point(421, 570);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(561, 702);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label13.Size = new System.Drawing.Size(74, 13);
+            this.label13.Size = new System.Drawing.Size(87, 15);
             this.label13.TabIndex = 52;
             this.label13.Text = "* = erforderlich";
             // 
@@ -796,10 +781,10 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(151, 107);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(201, 132);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(318, 102);
+            this.pictureBox5.Size = new System.Drawing.Size(424, 126);
             this.pictureBox5.TabIndex = 51;
             this.pictureBox5.TabStop = false;
             // 
@@ -810,10 +795,10 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(98, 133);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Location = new System.Drawing.Point(133, 155);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(31, 32);
+            this.button6.Size = new System.Drawing.Size(41, 39);
             this.button6.TabIndex = 50;
             this.button6.Text = "H";
             this.button6.UseVisualStyleBackColor = false;
@@ -824,11 +809,10 @@
             this.label5passwortlogin.AutoSize = true;
             this.label5passwortlogin.BackColor = System.Drawing.Color.White;
             this.label5passwortlogin.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5passwortlogin.Location = new System.Drawing.Point(126, 318);
-            this.label5passwortlogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5passwortlogin.Location = new System.Drawing.Point(168, 391);
             this.label5passwortlogin.Name = "label5passwortlogin";
             this.label5passwortlogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5passwortlogin.Size = new System.Drawing.Size(76, 13);
+            this.label5passwortlogin.Size = new System.Drawing.Size(93, 16);
             this.label5passwortlogin.TabIndex = 49;
             this.label5passwortlogin.Text = "PASSWORT *";
             // 
@@ -837,11 +821,10 @@
             this.label6emaillogin.AutoSize = true;
             this.label6emaillogin.BackColor = System.Drawing.Color.White;
             this.label6emaillogin.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6emaillogin.Location = new System.Drawing.Point(126, 254);
-            this.label6emaillogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6emaillogin.Location = new System.Drawing.Point(168, 313);
             this.label6emaillogin.Name = "label6emaillogin";
             this.label6emaillogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6emaillogin.Size = new System.Drawing.Size(100, 13);
+            this.label6emaillogin.Size = new System.Drawing.Size(123, 16);
             this.label6emaillogin.TabIndex = 48;
             this.label6emaillogin.Text = "EMAIL-ADRESSE *";
             // 
@@ -850,10 +833,10 @@
             this.buttonLOGIN.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonLOGIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLOGIN.ForeColor = System.Drawing.Color.White;
-            this.buttonLOGIN.Location = new System.Drawing.Point(124, 526);
-            this.buttonLOGIN.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLOGIN.Location = new System.Drawing.Point(165, 647);
+            this.buttonLOGIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLOGIN.Name = "buttonLOGIN";
-            this.buttonLOGIN.Size = new System.Drawing.Size(365, 41);
+            this.buttonLOGIN.Size = new System.Drawing.Size(487, 50);
             this.buttonLOGIN.TabIndex = 47;
             this.buttonLOGIN.Text = "L O G I N";
             this.buttonLOGIN.UseVisualStyleBackColor = false;
@@ -862,21 +845,21 @@
             // textBoxLOGINpasswort
             // 
             this.textBoxLOGINpasswort.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxLOGINpasswort.Location = new System.Drawing.Point(128, 336);
-            this.textBoxLOGINpasswort.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLOGINpasswort.Location = new System.Drawing.Point(171, 414);
+            this.textBoxLOGINpasswort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxLOGINpasswort.Name = "textBoxLOGINpasswort";
             this.textBoxLOGINpasswort.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxLOGINpasswort.Size = new System.Drawing.Size(362, 20);
+            this.textBoxLOGINpasswort.Size = new System.Drawing.Size(481, 22);
             this.textBoxLOGINpasswort.TabIndex = 46;
             // 
             // textBoxloginEMAIL
             // 
             this.textBoxloginEMAIL.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxloginEMAIL.Location = new System.Drawing.Point(128, 272);
-            this.textBoxloginEMAIL.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxloginEMAIL.Location = new System.Drawing.Point(171, 335);
+            this.textBoxloginEMAIL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxloginEMAIL.Name = "textBoxloginEMAIL";
             this.textBoxloginEMAIL.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxloginEMAIL.Size = new System.Drawing.Size(362, 20);
+            this.textBoxloginEMAIL.Size = new System.Drawing.Size(481, 22);
             this.textBoxloginEMAIL.TabIndex = 45;
             // 
             // tabPage4
@@ -906,12 +889,12 @@
             this.tabPage4.Controls.Add(this.button3);
             this.tabPage4.Controls.Add(this.pictureBox6);
             this.tabPage4.Controls.Add(this.buttonBearbeitenACC);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabPage4.Size = new System.Drawing.Size(612, 687);
+            this.tabPage4.Size = new System.Drawing.Size(819, 849);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "ACCOUNT (BEARBEITEN, LÖSCHEN, VORSCHAU)";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -921,11 +904,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(427, 565);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(611, 710);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(87, 15);
             this.label3.TabIndex = 97;
             this.label3.Text = "* = erforderlich";
             // 
@@ -934,12 +916,12 @@
             this.buttonKAUFENACC.BackColor = System.Drawing.Color.Gray;
             this.buttonKAUFENACC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKAUFENACC.ForeColor = System.Drawing.Color.White;
-            this.buttonKAUFENACC.Location = new System.Drawing.Point(368, 524);
-            this.buttonKAUFENACC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonKAUFENACC.Location = new System.Drawing.Point(435, 637);
+            this.buttonKAUFENACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKAUFENACC.Name = "buttonKAUFENACC";
-            this.buttonKAUFENACC.Size = new System.Drawing.Size(124, 41);
+            this.buttonKAUFENACC.Size = new System.Drawing.Size(227, 50);
             this.buttonKAUFENACC.TabIndex = 96;
-            this.buttonKAUFENACC.Text = "Wunschfahrzeug entdecken";
+            this.buttonKAUFENACC.Text = "F A H R Z E U G E\r\nE N T D E C K E N";
             this.buttonKAUFENACC.UseVisualStyleBackColor = false;
             this.buttonKAUFENACC.Click += new System.EventHandler(this.buttonKAUFENACC_Click);
             // 
@@ -951,12 +933,12 @@
             this.groupBox3.Controls.Add(this.radioButtonMaennlichACC);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox3.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox3.Location = new System.Drawing.Point(326, 326);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(435, 401);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox3.Size = new System.Drawing.Size(170, 36);
+            this.groupBox3.Size = new System.Drawing.Size(227, 44);
             this.groupBox3.TabIndex = 95;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "GESCHLECHT  *";
@@ -964,10 +946,10 @@
             // radioButtonDiversACC
             // 
             this.radioButtonDiversACC.AutoSize = true;
-            this.radioButtonDiversACC.Location = new System.Drawing.Point(116, 16);
-            this.radioButtonDiversACC.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonDiversACC.Location = new System.Drawing.Point(155, 20);
+            this.radioButtonDiversACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonDiversACC.Name = "radioButtonDiversACC";
-            this.radioButtonDiversACC.Size = new System.Drawing.Size(31, 17);
+            this.radioButtonDiversACC.Size = new System.Drawing.Size(36, 20);
             this.radioButtonDiversACC.TabIndex = 34;
             this.radioButtonDiversACC.TabStop = true;
             this.radioButtonDiversACC.Text = "d";
@@ -976,10 +958,10 @@
             // radioButtonWeiblichACC
             // 
             this.radioButtonWeiblichACC.AutoSize = true;
-            this.radioButtonWeiblichACC.Location = new System.Drawing.Point(63, 16);
-            this.radioButtonWeiblichACC.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonWeiblichACC.Location = new System.Drawing.Point(84, 20);
+            this.radioButtonWeiblichACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonWeiblichACC.Name = "radioButtonWeiblichACC";
-            this.radioButtonWeiblichACC.Size = new System.Drawing.Size(33, 17);
+            this.radioButtonWeiblichACC.Size = new System.Drawing.Size(37, 20);
             this.radioButtonWeiblichACC.TabIndex = 33;
             this.radioButtonWeiblichACC.TabStop = true;
             this.radioButtonWeiblichACC.Text = "w";
@@ -988,10 +970,10 @@
             // radioButtonMaennlichACC
             // 
             this.radioButtonMaennlichACC.AutoSize = true;
-            this.radioButtonMaennlichACC.Location = new System.Drawing.Point(6, 16);
-            this.radioButtonMaennlichACC.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonMaennlichACC.Location = new System.Drawing.Point(8, 20);
+            this.radioButtonMaennlichACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonMaennlichACC.Name = "radioButtonMaennlichACC";
-            this.radioButtonMaennlichACC.Size = new System.Drawing.Size(33, 17);
+            this.radioButtonMaennlichACC.Size = new System.Drawing.Size(39, 20);
             this.radioButtonMaennlichACC.TabIndex = 32;
             this.radioButtonMaennlichACC.TabStop = true;
             this.radioButtonMaennlichACC.Text = "m";
@@ -1002,22 +984,21 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(130, 283);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(173, 348);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 83;
             this.label2.Text = "VORNAME *";
             // 
             // textBoxVORNACCOUNT
             // 
             this.textBoxVORNACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxVORNACCOUNT.Location = new System.Drawing.Point(132, 301);
-            this.textBoxVORNACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxVORNACCOUNT.Location = new System.Drawing.Point(176, 370);
+            this.textBoxVORNACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxVORNACCOUNT.Name = "textBoxVORNACCOUNT";
             this.textBoxVORNACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxVORNACCOUNT.Size = new System.Drawing.Size(161, 20);
+            this.textBoxVORNACCOUNT.Size = new System.Drawing.Size(213, 22);
             this.textBoxVORNACCOUNT.TabIndex = 81;
             // 
             // label14
@@ -1025,24 +1006,23 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
             this.label14.ForeColor = System.Drawing.Color.DarkGray;
-            this.label14.Location = new System.Drawing.Point(323, 418);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(431, 514);
             this.label14.Name = "label14";
             this.label14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.Size = new System.Drawing.Size(93, 16);
             this.label14.TabIndex = 94;
             this.label14.Text = "PASSWORT *";
             // 
             // textBoxPASSWORTACCOUNT
             // 
             this.textBoxPASSWORTACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxPASSWORTACCOUNT.Location = new System.Drawing.Point(326, 433);
-            this.textBoxPASSWORTACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPASSWORTACCOUNT.Location = new System.Drawing.Point(435, 533);
+            this.textBoxPASSWORTACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPASSWORTACCOUNT.MaxLength = 8;
             this.textBoxPASSWORTACCOUNT.Name = "textBoxPASSWORTACCOUNT";
             this.textBoxPASSWORTACCOUNT.ReadOnly = true;
             this.textBoxPASSWORTACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxPASSWORTACCOUNT.Size = new System.Drawing.Size(169, 20);
+            this.textBoxPASSWORTACCOUNT.Size = new System.Drawing.Size(224, 22);
             this.textBoxPASSWORTACCOUNT.TabIndex = 93;
             // 
             // label15
@@ -1050,22 +1030,21 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.ForeColor = System.Drawing.Color.DarkGray;
-            this.label15.Location = new System.Drawing.Point(130, 418);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(173, 514);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label15.Size = new System.Drawing.Size(100, 13);
+            this.label15.Size = new System.Drawing.Size(123, 16);
             this.label15.TabIndex = 92;
             this.label15.Text = "EMAIL-ADRESSE *";
             // 
             // textBoxEMAILACCOUNT
             // 
             this.textBoxEMAILACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxEMAILACCOUNT.Location = new System.Drawing.Point(132, 433);
-            this.textBoxEMAILACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEMAILACCOUNT.Location = new System.Drawing.Point(176, 533);
+            this.textBoxEMAILACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxEMAILACCOUNT.Name = "textBoxEMAILACCOUNT";
             this.textBoxEMAILACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxEMAILACCOUNT.Size = new System.Drawing.Size(162, 20);
+            this.textBoxEMAILACCOUNT.Size = new System.Drawing.Size(215, 22);
             this.textBoxEMAILACCOUNT.TabIndex = 91;
             // 
             // label16
@@ -1073,22 +1052,21 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.ForeColor = System.Drawing.Color.DarkGray;
-            this.label16.Location = new System.Drawing.Point(323, 373);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Location = new System.Drawing.Point(431, 459);
             this.label16.Name = "label16";
             this.label16.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label16.Size = new System.Drawing.Size(112, 13);
+            this.label16.Size = new System.Drawing.Size(138, 16);
             this.label16.TabIndex = 90;
             this.label16.Text = "TELEFONNUMMER *";
             // 
             // textBoxTELEFONACCOUNT
             // 
             this.textBoxTELEFONACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxTELEFONACCOUNT.Location = new System.Drawing.Point(326, 390);
-            this.textBoxTELEFONACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxTELEFONACCOUNT.Location = new System.Drawing.Point(435, 480);
+            this.textBoxTELEFONACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTELEFONACCOUNT.Name = "textBoxTELEFONACCOUNT";
             this.textBoxTELEFONACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxTELEFONACCOUNT.Size = new System.Drawing.Size(169, 20);
+            this.textBoxTELEFONACCOUNT.Size = new System.Drawing.Size(224, 22);
             this.textBoxTELEFONACCOUNT.TabIndex = 89;
             // 
             // label17
@@ -1096,22 +1074,21 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.ForeColor = System.Drawing.Color.DarkGray;
-            this.label17.Location = new System.Drawing.Point(131, 373);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Location = new System.Drawing.Point(175, 459);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label17.Size = new System.Drawing.Size(65, 13);
+            this.label17.Size = new System.Drawing.Size(80, 16);
             this.label17.TabIndex = 88;
             this.label17.Text = "ADRESSE *";
             // 
             // textBoxADRESSEACCOUNT
             // 
             this.textBoxADRESSEACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxADRESSEACCOUNT.Location = new System.Drawing.Point(133, 390);
-            this.textBoxADRESSEACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxADRESSEACCOUNT.Location = new System.Drawing.Point(177, 480);
+            this.textBoxADRESSEACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxADRESSEACCOUNT.Name = "textBoxADRESSEACCOUNT";
             this.textBoxADRESSEACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxADRESSEACCOUNT.Size = new System.Drawing.Size(162, 20);
+            this.textBoxADRESSEACCOUNT.Size = new System.Drawing.Size(215, 22);
             this.textBoxADRESSEACCOUNT.TabIndex = 87;
             // 
             // label18
@@ -1119,20 +1096,19 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.ForeColor = System.Drawing.Color.DarkGray;
-            this.label18.Location = new System.Drawing.Point(323, 283);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Location = new System.Drawing.Point(431, 348);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label18.Size = new System.Drawing.Size(105, 13);
+            this.label18.Size = new System.Drawing.Size(130, 16);
             this.label18.TabIndex = 86;
             this.label18.Text = "GEBURTSDATUM *";
             // 
             // dateTimePickerACCOUNT
             // 
-            this.dateTimePickerACCOUNT.Location = new System.Drawing.Point(326, 301);
-            this.dateTimePickerACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerACCOUNT.Location = new System.Drawing.Point(435, 370);
+            this.dateTimePickerACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerACCOUNT.Name = "dateTimePickerACCOUNT";
-            this.dateTimePickerACCOUNT.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePickerACCOUNT.Size = new System.Drawing.Size(225, 22);
             this.dateTimePickerACCOUNT.TabIndex = 85;
             // 
             // label19
@@ -1140,22 +1116,21 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.ForeColor = System.Drawing.Color.DarkGray;
-            this.label19.Location = new System.Drawing.Point(130, 326);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Location = new System.Drawing.Point(173, 401);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.Size = new System.Drawing.Size(92, 16);
             this.label19.TabIndex = 84;
             this.label19.Text = "NACHNAME *";
             // 
             // textBoxNACHNACCOUNT
             // 
             this.textBoxNACHNACCOUNT.BackColor = System.Drawing.Color.LightGray;
-            this.textBoxNACHNACCOUNT.Location = new System.Drawing.Point(133, 343);
-            this.textBoxNACHNACCOUNT.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNACHNACCOUNT.Location = new System.Drawing.Point(177, 422);
+            this.textBoxNACHNACCOUNT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNACHNACCOUNT.Name = "textBoxNACHNACCOUNT";
             this.textBoxNACHNACCOUNT.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxNACHNACCOUNT.Size = new System.Drawing.Size(160, 20);
+            this.textBoxNACHNACCOUNT.Size = new System.Drawing.Size(212, 22);
             this.textBoxNACHNACCOUNT.TabIndex = 82;
             // 
             // buttonloeschenACC
@@ -1163,10 +1138,10 @@
             this.buttonloeschenACC.BackColor = System.Drawing.Color.Crimson;
             this.buttonloeschenACC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonloeschenACC.ForeColor = System.Drawing.Color.White;
-            this.buttonloeschenACC.Location = new System.Drawing.Point(130, 524);
-            this.buttonloeschenACC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonloeschenACC.Location = new System.Drawing.Point(176, 637);
+            this.buttonloeschenACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonloeschenACC.Name = "buttonloeschenACC";
-            this.buttonloeschenACC.Size = new System.Drawing.Size(163, 41);
+            this.buttonloeschenACC.Size = new System.Drawing.Size(215, 50);
             this.buttonloeschenACC.TabIndex = 80;
             this.buttonloeschenACC.Text = "L Ö S C H E N";
             this.buttonloeschenACC.UseVisualStyleBackColor = false;
@@ -1176,10 +1151,9 @@
             // 
             this.labelKundenID.AutoSize = true;
             this.labelKundenID.BackColor = System.Drawing.Color.Silver;
-            this.labelKundenID.Location = new System.Drawing.Point(132, 186);
-            this.labelKundenID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelKundenID.Location = new System.Drawing.Point(176, 229);
             this.labelKundenID.Name = "labelKundenID";
-            this.labelKundenID.Size = new System.Drawing.Size(22, 13);
+            this.labelKundenID.Size = new System.Drawing.Size(22, 16);
             this.labelKundenID.TabIndex = 79;
             this.labelKundenID.Text = "     ";
             this.labelKundenID.Click += new System.EventHandler(this.labelKundenID_Click);
@@ -1188,12 +1162,12 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.LightGray;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(130, 212);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBox1.Location = new System.Drawing.Point(176, 261);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox1.Size = new System.Drawing.Size(362, 61);
+            this.richTextBox1.Size = new System.Drawing.Size(486, 74);
             this.richTextBox1.TabIndex = 78;
             this.richTextBox1.Text = "";
             // 
@@ -1204,10 +1178,10 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(103, 141);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Location = new System.Drawing.Point(137, 158);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(31, 32);
+            this.button3.Size = new System.Drawing.Size(41, 39);
             this.button3.TabIndex = 77;
             this.button3.Text = "H";
             this.button3.UseVisualStyleBackColor = false;
@@ -1218,10 +1192,10 @@
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(138, 88);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Location = new System.Drawing.Point(184, 108);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(356, 147);
+            this.pictureBox6.Size = new System.Drawing.Size(475, 181);
             this.pictureBox6.TabIndex = 76;
             this.pictureBox6.TabStop = false;
             // 
@@ -1230,10 +1204,10 @@
             this.buttonBearbeitenACC.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonBearbeitenACC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBearbeitenACC.ForeColor = System.Drawing.Color.White;
-            this.buttonBearbeitenACC.Location = new System.Drawing.Point(130, 470);
-            this.buttonBearbeitenACC.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonBearbeitenACC.Location = new System.Drawing.Point(176, 576);
+            this.buttonBearbeitenACC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBearbeitenACC.Name = "buttonBearbeitenACC";
-            this.buttonBearbeitenACC.Size = new System.Drawing.Size(163, 41);
+            this.buttonBearbeitenACC.Size = new System.Drawing.Size(216, 50);
             this.buttonBearbeitenACC.TabIndex = 75;
             this.buttonBearbeitenACC.Text = "B E A R B E I T E N";
             this.buttonBearbeitenACC.UseVisualStyleBackColor = false;
@@ -1244,7 +1218,7 @@
             this.tabPage5.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.hintergrundautoleasing2;
             this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage5.Controls.Add(this.textBox2_Fahrzeuge);
-            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Controls.Add(this.buttonjetztbezahlen);
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Controls.Add(this.pictureBox10);
             this.tabPage5.Controls.Add(this.button2);
@@ -1260,49 +1234,60 @@
             this.tabPage5.Controls.Add(this.dataGridView1);
             this.tabPage5.Controls.Add(this.pictureBox8);
             this.tabPage5.Controls.Add(this.pictureBox9);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage5.Size = new System.Drawing.Size(612, 687);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Size = new System.Drawing.Size(819, 849);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "FAHRZEUGE/VERTRAG";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // textBox2_Fahrzeuge
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(100, 525);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(418, 41);
-            this.button1.TabIndex = 99;
-            this.button1.Text = "J E T Z T  B E Z A H L E N ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.textBox2_Fahrzeuge.BackColor = System.Drawing.Color.LightGray;
+            this.textBox2_Fahrzeuge.Enabled = false;
+            this.textBox2_Fahrzeuge.Location = new System.Drawing.Point(129, 458);
+            this.textBox2_Fahrzeuge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2_Fahrzeuge.Name = "textBox2_Fahrzeuge";
+            this.textBox2_Fahrzeuge.ReadOnly = true;
+            this.textBox2_Fahrzeuge.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox2_Fahrzeuge.Size = new System.Drawing.Size(273, 22);
+            this.textBox2_Fahrzeuge.TabIndex = 100;
+            // 
+            // buttonjetztbezahlen
+            // 
+            this.buttonjetztbezahlen.BackColor = System.Drawing.Color.LightSlateGray;
+            this.buttonjetztbezahlen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonjetztbezahlen.ForeColor = System.Drawing.Color.White;
+            this.buttonjetztbezahlen.Location = new System.Drawing.Point(129, 646);
+            this.buttonjetztbezahlen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonjetztbezahlen.Name = "buttonjetztbezahlen";
+            this.buttonjetztbezahlen.Size = new System.Drawing.Size(561, 50);
+            this.buttonjetztbezahlen.TabIndex = 99;
+            this.buttonjetztbezahlen.Text = "J E T Z T  B E Z A H L E N ";
+            this.buttonjetztbezahlen.UseVisualStyleBackColor = false;
+            this.buttonjetztbezahlen.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(442, 568);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(603, 700);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.Size = new System.Drawing.Size(87, 15);
             this.label6.TabIndex = 98;
             this.label6.Text = "* = erforderlich";
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox10.Location = new System.Drawing.Point(313, 163);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Location = new System.Drawing.Point(417, 201);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(205, 146);
+            this.pictureBox10.Size = new System.Drawing.Size(273, 180);
             this.pictureBox10.TabIndex = 84;
             this.pictureBox10.TabStop = false;
             // 
@@ -1313,10 +1298,10 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(97, 126);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(129, 155);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(31, 32);
+            this.button2.Size = new System.Drawing.Size(41, 39);
             this.button2.TabIndex = 83;
             this.button2.Text = "H";
             this.button2.UseVisualStyleBackColor = false;
@@ -1326,10 +1311,9 @@
             // 
             this.vertragkundelabel.AutoSize = true;
             this.vertragkundelabel.BackColor = System.Drawing.Color.Silver;
-            this.vertragkundelabel.Location = new System.Drawing.Point(97, 323);
-            this.vertragkundelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.vertragkundelabel.Location = new System.Drawing.Point(129, 398);
             this.vertragkundelabel.Name = "vertragkundelabel";
-            this.vertragkundelabel.Size = new System.Drawing.Size(22, 13);
+            this.vertragkundelabel.Size = new System.Drawing.Size(22, 16);
             this.vertragkundelabel.TabIndex = 80;
             this.vertragkundelabel.Text = "     ";
             // 
@@ -1338,10 +1322,10 @@
             this.buttonvertrag.BackColor = System.Drawing.Color.LightSlateGray;
             this.buttonvertrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonvertrag.ForeColor = System.Drawing.Color.White;
-            this.buttonvertrag.Location = new System.Drawing.Point(97, 475);
-            this.buttonvertrag.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonvertrag.Location = new System.Drawing.Point(129, 585);
+            this.buttonvertrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonvertrag.Name = "buttonvertrag";
-            this.buttonvertrag.Size = new System.Drawing.Size(421, 41);
+            this.buttonvertrag.Size = new System.Drawing.Size(561, 50);
             this.buttonvertrag.TabIndex = 50;
             this.buttonvertrag.Text = "V E R T R A G   E R S T E L L E N ";
             this.buttonvertrag.UseVisualStyleBackColor = false;
@@ -1352,11 +1336,10 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.White;
             this.label22.ForeColor = System.Drawing.Color.DarkGray;
-            this.label22.Location = new System.Drawing.Point(310, 357);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Location = new System.Drawing.Point(413, 439);
             this.label22.Name = "label22";
             this.label22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label22.Size = new System.Drawing.Size(109, 13);
+            this.label22.Size = new System.Drawing.Size(134, 16);
             this.label22.TabIndex = 49;
             this.label22.Text = "MONATLICHE RATE";
             // 
@@ -1364,12 +1347,12 @@
             // 
             this.textBoxmrate.BackColor = System.Drawing.Color.LightGray;
             this.textBoxmrate.Enabled = false;
-            this.textBoxmrate.Location = new System.Drawing.Point(310, 372);
-            this.textBoxmrate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxmrate.Location = new System.Drawing.Point(417, 458);
+            this.textBoxmrate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxmrate.Name = "textBoxmrate";
             this.textBoxmrate.ReadOnly = true;
             this.textBoxmrate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxmrate.Size = new System.Drawing.Size(206, 20);
+            this.textBoxmrate.Size = new System.Drawing.Size(269, 22);
             this.textBoxmrate.TabIndex = 48;
             this.textBoxmrate.TextChanged += new System.EventHandler(this.textBoxmrate_TextChanged);
             // 
@@ -1378,20 +1361,19 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
             this.label21.ForeColor = System.Drawing.Color.DarkGray;
-            this.label21.Location = new System.Drawing.Point(310, 413);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Location = new System.Drawing.Point(413, 508);
             this.label21.Name = "label21";
             this.label21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label21.Size = new System.Drawing.Size(103, 13);
+            this.label21.Size = new System.Drawing.Size(128, 16);
             this.label21.TabIndex = 47;
             this.label21.Text = "VERTRAGSENDE *";
             // 
             // dateTimePickerEnde
             // 
-            this.dateTimePickerEnde.Location = new System.Drawing.Point(313, 428);
-            this.dateTimePickerEnde.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerEnde.Location = new System.Drawing.Point(417, 527);
+            this.dateTimePickerEnde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerEnde.Name = "dateTimePickerEnde";
-            this.dateTimePickerEnde.Size = new System.Drawing.Size(204, 20);
+            this.dateTimePickerEnde.Size = new System.Drawing.Size(271, 22);
             this.dateTimePickerEnde.TabIndex = 46;
             // 
             // label20
@@ -1399,20 +1381,19 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.White;
             this.label20.ForeColor = System.Drawing.Color.DarkGray;
-            this.label20.Location = new System.Drawing.Point(96, 413);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(131, 508);
             this.label20.Name = "label20";
             this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label20.Size = new System.Drawing.Size(117, 13);
+            this.label20.Size = new System.Drawing.Size(146, 16);
             this.label20.TabIndex = 45;
             this.label20.Text = "VERTRAGSANFANG *";
             // 
             // dateTimePickerAnfang
             // 
-            this.dateTimePickerAnfang.Location = new System.Drawing.Point(98, 428);
-            this.dateTimePickerAnfang.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerAnfang.Location = new System.Drawing.Point(131, 527);
+            this.dateTimePickerAnfang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerAnfang.Name = "dateTimePickerAnfang";
-            this.dateTimePickerAnfang.Size = new System.Drawing.Size(204, 20);
+            this.dateTimePickerAnfang.Size = new System.Drawing.Size(271, 22);
             this.dateTimePickerAnfang.TabIndex = 44;
             this.dateTimePickerAnfang.ValueChanged += new System.EventHandler(this.dateTimePickerAnfang_ValueChanged);
             // 
@@ -1421,11 +1402,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(94, 357);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(128, 439);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 39;
             this.label5.Text = "FAHRZEUG";
             // 
@@ -1433,13 +1413,13 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(97, 163);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(129, 201);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(205, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(273, 180);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -1447,10 +1427,10 @@
             // 
             this.pictureBox8.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.Fahrzeuge;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(208, 71);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox8.Location = new System.Drawing.Point(277, 87);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(194, 156);
+            this.pictureBox8.Size = new System.Drawing.Size(259, 192);
             this.pictureBox8.TabIndex = 1;
             this.pictureBox8.TabStop = false;
             // 
@@ -1458,10 +1438,10 @@
             // 
             this.pictureBox9.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.VERTRAG;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(237, 269);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Location = new System.Drawing.Point(316, 331);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(139, 133);
+            this.pictureBox9.Size = new System.Drawing.Size(185, 164);
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
             // 
@@ -1469,50 +1449,202 @@
             // 
             this.tabPage6_Zahlung.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.hintergrundautoleasing2;
             this.tabPage6_Zahlung.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage6_Zahlung.Controls.Add(this.label23ZID);
+            this.tabPage6_Zahlung.Controls.Add(this.button7);
             this.tabPage6_Zahlung.Controls.Add(this.label28);
-            this.tabPage6_Zahlung.Controls.Add(this.dateTimePicker1);
-            this.tabPage6_Zahlung.Controls.Add(this.dataGridView2);
+            this.tabPage6_Zahlung.Controls.Add(this.dateTimePickerZahlungsfrist);
+            this.tabPage6_Zahlung.Controls.Add(this.dataGridViewZahlung);
             this.tabPage6_Zahlung.Controls.Add(this.radioButton6);
             this.tabPage6_Zahlung.Controls.Add(this.radioButton5);
             this.tabPage6_Zahlung.Controls.Add(this.label27);
             this.tabPage6_Zahlung.Controls.Add(this.radioButton4);
             this.tabPage6_Zahlung.Controls.Add(this.label25);
-            this.tabPage6_Zahlung.Controls.Add(this.textBox1);
+            this.tabPage6_Zahlung.Controls.Add(this.textBoxbetrag);
             this.tabPage6_Zahlung.Controls.Add(this.label26);
             this.tabPage6_Zahlung.Controls.Add(this.comboBox1);
             this.tabPage6_Zahlung.Controls.Add(this.label24_V_ID);
             this.tabPage6_Zahlung.Controls.Add(this.label23_KID);
             this.tabPage6_Zahlung.Controls.Add(this.button4);
             this.tabPage6_Zahlung.Controls.Add(this.pictureBox11);
-            this.tabPage6_Zahlung.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6_Zahlung.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6_Zahlung.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6_Zahlung.Name = "tabPage6_Zahlung";
-            this.tabPage6_Zahlung.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6_Zahlung.Size = new System.Drawing.Size(612, 687);
+            this.tabPage6_Zahlung.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage6_Zahlung.Size = new System.Drawing.Size(819, 849);
             this.tabPage6_Zahlung.TabIndex = 5;
             this.tabPage6_Zahlung.Text = "ZAHLUNG";
             this.tabPage6_Zahlung.UseVisualStyleBackColor = true;
             // 
-            // pictureBox11
+            // button7
             // 
-            this.pictureBox11.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.ZAHLUNG_1;
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(207, 66);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(194, 156);
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
+            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(124, 665);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(557, 50);
+            this.button7.TabIndex = 100;
+            this.button7.Text = "J E T Z T  B E Z A H L E N ";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // pictureBox2
+            // label28
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(-26, 127);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(600, 460);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.White;
+            this.label28.ForeColor = System.Drawing.Color.DarkGray;
+            this.label28.Location = new System.Drawing.Point(144, 639);
+            this.label28.Name = "label28";
+            this.label28.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label28.Size = new System.Drawing.Size(127, 16);
+            this.label28.TabIndex = 98;
+            this.label28.Text = "ZAHLUNGSFRIST *";
+            // 
+            // dateTimePickerZahlungsfrist
+            // 
+            this.dateTimePickerZahlungsfrist.Location = new System.Drawing.Point(415, 639);
+            this.dateTimePickerZahlungsfrist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerZahlungsfrist.Name = "dateTimePickerZahlungsfrist";
+            this.dateTimePickerZahlungsfrist.Size = new System.Drawing.Size(247, 22);
+            this.dateTimePickerZahlungsfrist.TabIndex = 97;
+            // 
+            // dataGridViewZahlung
+            // 
+            this.dataGridViewZahlung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewZahlung.Location = new System.Drawing.Point(149, 230);
+            this.dataGridViewZahlung.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewZahlung.Name = "dataGridViewZahlung";
+            this.dataGridViewZahlung.RowHeadersWidth = 51;
+            this.dataGridViewZahlung.Size = new System.Drawing.Size(513, 164);
+            this.dataGridViewZahlung.TabIndex = 96;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Enabled = false;
+            this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButton6.Location = new System.Drawing.Point(557, 598);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(97, 19);
+            this.radioButton6.TabIndex = 95;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "VERSPÄTET";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Enabled = false;
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButton5.Location = new System.Drawing.Point(444, 598);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(68, 19);
+            this.radioButton5.TabIndex = 94;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "OFFEN";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.White;
+            this.label27.ForeColor = System.Drawing.Color.DarkGray;
+            this.label27.Location = new System.Drawing.Point(145, 598);
+            this.label27.Name = "label27";
+            this.label27.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label27.Size = new System.Drawing.Size(62, 16);
+            this.label27.TabIndex = 93;
+            this.label27.Text = "STATUS";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Enabled = false;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButton4.Location = new System.Drawing.Point(315, 598);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(81, 19);
+            this.radioButton4.TabIndex = 92;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "BEZAHLT";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.White;
+            this.label25.ForeColor = System.Drawing.Color.DarkGray;
+            this.label25.Location = new System.Drawing.Point(145, 508);
+            this.label25.Name = "label25";
+            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label25.Size = new System.Drawing.Size(63, 16);
+            this.label25.TabIndex = 91;
+            this.label25.Text = "BETRAG";
+            // 
+            // textBoxbetrag
+            // 
+            this.textBoxbetrag.BackColor = System.Drawing.Color.LightGray;
+            this.textBoxbetrag.Enabled = false;
+            this.textBoxbetrag.Location = new System.Drawing.Point(148, 539);
+            this.textBoxbetrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxbetrag.Name = "textBoxbetrag";
+            this.textBoxbetrag.ReadOnly = true;
+            this.textBoxbetrag.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxbetrag.Size = new System.Drawing.Size(225, 22);
+            this.textBoxbetrag.TabIndex = 90;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.ForeColor = System.Drawing.Color.DarkGray;
+            this.label26.Location = new System.Drawing.Point(409, 508);
+            this.label26.Name = "label26";
+            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label26.Size = new System.Drawing.Size(148, 16);
+            this.label26.TabIndex = 89;
+            this.label26.Text = "ZAHLUNGSMETHODE";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(413, 539);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBox1.Size = new System.Drawing.Size(247, 24);
+            this.comboBox1.TabIndex = 88;
+            // 
+            // label24_V_ID
+            // 
+            this.label24_V_ID.AutoSize = true;
+            this.label24_V_ID.BackColor = System.Drawing.Color.Silver;
+            this.label24_V_ID.Location = new System.Drawing.Point(148, 466);
+            this.label24_V_ID.Name = "label24_V_ID";
+            this.label24_V_ID.Size = new System.Drawing.Size(22, 16);
+            this.label24_V_ID.TabIndex = 86;
+            this.label24_V_ID.Text = "     ";
+            // 
+            // label23_KID
+            // 
+            this.label23_KID.AutoSize = true;
+            this.label23_KID.BackColor = System.Drawing.Color.Silver;
+            this.label23_KID.Location = new System.Drawing.Point(148, 422);
+            this.label23_KID.Name = "label23_KID";
+            this.label23_KID.Size = new System.Drawing.Size(22, 16);
+            this.label23_KID.TabIndex = 85;
+            this.label23_KID.Text = "     ";
             // 
             // button4
             // 
@@ -1521,197 +1653,62 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(111, 127);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Location = new System.Drawing.Point(147, 154);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 32);
+            this.button4.Size = new System.Drawing.Size(41, 39);
             this.button4.TabIndex = 84;
             this.button4.Text = "H";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // label23_KID
+            // pictureBox11
             // 
-            this.label23_KID.AutoSize = true;
-            this.label23_KID.BackColor = System.Drawing.Color.Silver;
-            this.label23_KID.Location = new System.Drawing.Point(111, 343);
-            this.label23_KID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23_KID.Name = "label23_KID";
-            this.label23_KID.Size = new System.Drawing.Size(22, 13);
-            this.label23_KID.TabIndex = 85;
-            this.label23_KID.Text = "     ";
+            this.pictureBox11.BackgroundImage = global::AUTOLEASING_AzraBrittRahmAliS.Properties.Resources.ZAHLUNG_1;
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Location = new System.Drawing.Point(276, 81);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(259, 192);
+            this.pictureBox11.TabIndex = 2;
+            this.pictureBox11.TabStop = false;
             // 
-            // label24_V_ID
+            // errorProvider1
             // 
-            this.label24_V_ID.AutoSize = true;
-            this.label24_V_ID.BackColor = System.Drawing.Color.Silver;
-            this.label24_V_ID.Location = new System.Drawing.Point(111, 379);
-            this.label24_V_ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24_V_ID.Name = "label24_V_ID";
-            this.label24_V_ID.Size = new System.Drawing.Size(22, 13);
-            this.label24_V_ID.TabIndex = 86;
-            this.label24_V_ID.Text = "     ";
+            this.errorProvider1.ContainerControl = this;
             // 
-            // label25
+            // pictureBox2
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.ForeColor = System.Drawing.Color.DarkGray;
-            this.label25.Location = new System.Drawing.Point(109, 413);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label25.Size = new System.Drawing.Size(51, 13);
-            this.label25.TabIndex = 91;
-            this.label25.Text = "BETRAG";
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(-35, 156);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(800, 566);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // label23ZID
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(111, 438);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 90;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.ForeColor = System.Drawing.Color.DarkGray;
-            this.label26.Location = new System.Drawing.Point(307, 413);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label26.Size = new System.Drawing.Size(120, 13);
-            this.label26.TabIndex = 89;
-            this.label26.Text = "ZAHLUNGSMETHODE";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(310, 438);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox1.Size = new System.Drawing.Size(186, 21);
-            this.comboBox1.TabIndex = 88;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Enabled = false;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton4.Location = new System.Drawing.Point(236, 486);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(65, 16);
-            this.radioButton4.TabIndex = 92;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "BEZAHLT";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.White;
-            this.label27.ForeColor = System.Drawing.Color.DarkGray;
-            this.label27.Location = new System.Drawing.Point(109, 486);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label27.Size = new System.Drawing.Size(50, 13);
-            this.label27.TabIndex = 93;
-            this.label27.Text = "STATUS";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Enabled = false;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton5.Location = new System.Drawing.Point(333, 486);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(55, 16);
-            this.radioButton5.TabIndex = 94;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "OFFEN";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Enabled = false;
-            this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton6.Location = new System.Drawing.Point(418, 486);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(78, 16);
-            this.radioButton6.TabIndex = 95;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "VERSPÄTET";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(112, 187);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(385, 133);
-            this.dataGridView2.TabIndex = 96;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(311, 519);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(186, 20);
-            this.dateTimePicker1.TabIndex = 97;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.White;
-            this.label28.ForeColor = System.Drawing.Color.DarkGray;
-            this.label28.Location = new System.Drawing.Point(108, 519);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label28.Size = new System.Drawing.Size(112, 13);
-            this.label28.TabIndex = 98;
-            this.label28.Text = "ZAHLUNGSDATUM *";
-            // 
-            // textBox2_Fahrzeuge
-            // 
-            this.textBox2_Fahrzeuge.BackColor = System.Drawing.Color.LightGray;
-            this.textBox2_Fahrzeuge.Enabled = false;
-            this.textBox2_Fahrzeuge.Location = new System.Drawing.Point(100, 372);
-            this.textBox2_Fahrzeuge.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2_Fahrzeuge.Name = "textBox2_Fahrzeuge";
-            this.textBox2_Fahrzeuge.ReadOnly = true;
-            this.textBox2_Fahrzeuge.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2_Fahrzeuge.Size = new System.Drawing.Size(206, 20);
-            this.textBox2_Fahrzeuge.TabIndex = 100;
+            this.label23ZID.AutoSize = true;
+            this.label23ZID.BackColor = System.Drawing.Color.Silver;
+            this.label23ZID.Location = new System.Drawing.Point(415, 422);
+            this.label23ZID.Name = "label23ZID";
+            this.label23ZID.Size = new System.Drawing.Size(22, 16);
+            this.label23ZID.TabIndex = 101;
+            this.label23ZID.Text = "     ";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(618, 709);
+            this.ClientSize = new System.Drawing.Size(824, 873);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "AUTOLEASING";
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1739,9 +1736,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.tabPage6_Zahlung.ResumeLayout(false);
             this.tabPage6_Zahlung.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZahlung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1845,24 +1843,26 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonjetztbezahlen;
         private System.Windows.Forms.TabPage tabPage6_Zahlung;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label24_V_ID;
         private System.Windows.Forms.Label label23_KID;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxbetrag;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewZahlung;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerZahlungsfrist;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBox2_Fahrzeuge;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label23ZID;
     }
 }
 

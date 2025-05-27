@@ -62,7 +62,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         private int currentFahrzeugId = -1;
         private void LoadFahrzeugComboBox()
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
@@ -101,7 +101,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         }
         private void LoadFahrzeugeData()
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -242,7 +242,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
         private bool CheckEmailExists(string email)
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -273,7 +273,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
         {
             try
             {
-                string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                 using (var conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -325,7 +325,7 @@ namespace AUTOLEASING_AzraBrittRahmAliS
 
         private void LoadCustomerData(int kundenId)
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -519,7 +519,7 @@ Telefon: {reader["Telefonnummer"]}";
             }
 
             string email = textBoxEMAIlREG.Text;
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -584,7 +584,7 @@ Telefon: {reader["Telefonnummer"]}";
                 return;
             }
 
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
@@ -730,7 +730,7 @@ Telefon: {reader["Telefonnummer"]}";
                     // Kunden-ID aus dem Label extrahieren
                     int kundenId = int.Parse(labelKundenID.Text.Replace("Kunden-ID: ", ""));
 
-                    string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                    string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
@@ -793,7 +793,7 @@ Telefon: {reader["Telefonnummer"]}";
                     // Kunden-ID aus dem Label extrahieren
                     int kundenId = int.Parse(labelKundenID.Text.Replace("Kunden-ID: ", ""));
 
-                    string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+                    string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
@@ -896,7 +896,7 @@ Telefon: {reader["Telefonnummer"]}";
         }
         private int? GetFahrzeugIdFromName(string fahrzeugName)
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -945,7 +945,7 @@ Telefon: {reader["Telefonnummer"]}";
             textBoxmrate.Text = rate.ToString("C");
 
             // 6. Speichere den Vertrag in der Datenbank
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
@@ -1013,7 +1013,8 @@ Telefon: {reader["Telefonnummer"]}";
 
         //    try
         //    {
-        //        string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+        //                    string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+
         //        using (MySqlConnection conn = new MySqlConnection(connectionString))
         //        {
         //            conn.Open();
@@ -1041,7 +1042,7 @@ Telefon: {reader["Telefonnummer"]}";
         //}
         private int GeneriereNeueVertragsID()
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -1089,7 +1090,7 @@ Telefon: {reader["Telefonnummer"]}";
     
     private decimal BerechneMonatlicheRate(int fahrzeugId, DateTime beginn, DateTime ende)
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -1162,8 +1163,8 @@ Telefon: {reader["Telefonnummer"]}";
 
         private void ShowImage(int fahrzeugId)
         {
-            string connectionString = "Server=localhost;Port=3307;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
@@ -1286,14 +1287,11 @@ Telefon: {reader["Telefonnummer"]}";
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!IsValidPayment())
-            {
-                return;
-            }
-
-          
+            // Zur Zahlungsseite wechseln
             tabControl1.SelectedTab = tabPage6_Zahlung;
 
+            // Zahlungsdaten laden
+            LoadZahlungenData();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -1314,6 +1312,145 @@ Telefon: {reader["Telefonnummer"]}";
         private void textBoxmrate_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private void LoadZahlungenData()
+        {
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"SELECT z.Z_ID, z.Betrag, z.Zahlungsmethode, 
+                   z.Status, z.Zahlungsfrist, l.V_ID AS Vertragsnummer,
+                   CONCAT(f.Hersteller, ' ', f.Modell) AS Fahrzeug
+                   FROM Zahlung z
+                   JOIN Leasingvertrag l ON z.V_ID = l.V_ID
+                   JOIN Fahrzeug f ON l.F_ID = f.F_ID
+                   WHERE z.K_ID = @KundenID
+                   ORDER BY z.Zahlungsfrist DESC";  // Sortierung nach Fälligkeit
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@KundenID", GetCurrentKundenID());
+
+                    // Existierende Daten löschen
+                    if (dataGridViewZahlung.DataSource != null)
+                    {
+                        ((DataTable)dataGridViewZahlung.DataSource).Clear();
+                    }
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    // Datenquelle setzen
+                    dataGridViewZahlung.DataSource = dt;
+
+                    // Spalten konfigurieren
+                    ConfigureZahlungGridViewColumns();
+
+                    // Keine leere Zeile am Ende
+                    dataGridViewZahlung.AllowUserToAddRows = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim Laden der Zahlungen: " + ex.Message);
+                }
+            }
+        }
+
+        private void ConfigureZahlungGridViewColumns()
+        {
+            // Nur wenn Spalten existieren
+            if (dataGridViewZahlung.Columns.Count == 0) return;
+
+            dataGridViewZahlung.Columns["Z_ID"].HeaderText = "Zahlungs-ID";
+            dataGridViewZahlung.Columns["Betrag"].HeaderText = "Betrag (€)";
+            dataGridViewZahlung.Columns["Betrag"].DefaultCellStyle.Format = "C2";
+            dataGridViewZahlung.Columns["Zahlungsmethode"].HeaderText = "Zahlungsart";
+            dataGridViewZahlung.Columns["Status"].HeaderText = "Status";
+
+            // Datumsformat für die Frist
+            dataGridViewZahlung.Columns["Zahlungsfrist"].HeaderText = "Fällig am";
+            dataGridViewZahlung.Columns["Zahlungsfrist"].DefaultCellStyle.Format = "dd.MM.yyyy";
+
+            dataGridViewZahlung.Columns["Fahrzeug"].HeaderText = "Fahrzeug";
+
+            // Optional: Spaltenbreiten anpassen
+            dataGridViewZahlung.Columns["Z_ID"].Width = 80;
+            dataGridViewZahlung.Columns["Betrag"].Width = 100;
+            dataGridViewZahlung.Columns["Status"].Width = 100;
+            dataGridViewZahlung.Columns["Zahlungsfrist"].Width = 120;
+
+            dataGridViewZahlung.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+        }
+        private int GetCurrentKundenID()
+        {
+            // Extrahiert die Kunden-ID aus dem Label
+            if (labelKundenID.Text.StartsWith("Kunden-ID: "))
+            {
+                return int.Parse(labelKundenID.Text.Replace("Kunden-ID: ", ""));
+            }
+            return -1; // Falls nicht gefunden
+        }
+        private void dataGridViewZahlung_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewZahlung.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridViewZahlung.SelectedRows[0];
+                label23ZID.Text = selectedRow.Cells["Z_ID"].Value.ToString();
+                textBoxbetrag.Text = selectedRow.Cells["Betrag"].Value.ToString();
+
+                // Datum aus der DataGridView in den DateTimePicker laden
+                if (DateTime.TryParse(selectedRow.Cells["Zahlungsfrist"].Value.ToString(), out DateTime fristDatum))
+                {
+                    dateTimePickerZahlungsfrist.Value = fristDatum;
+                }
+            }
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewZahlung.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Bitte wählen Sie eine Zahlung aus");
+                return;
+            }
+
+            int zahlungsID = Convert.ToInt32(dataGridViewZahlung.SelectedRows[0].Cells["Z_ID"].Value);
+            DateTime neueFrist = dateTimePickerZahlungsfrist.Value;
+
+            string connectionString = "Server=localhost;Port=3306;Database=Autoleasing_MySQLABRA;Uid=root;Pwd=123Schule123;";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"UPDATE Zahlung 
+                            SET Status = 'BEZAHLT', 
+                                Zahlungsfrist = @NeueFrist 
+                            WHERE Z_ID = @ZahlungsID";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ZahlungsID", zahlungsID);
+                    cmd.Parameters.AddWithValue("@NeueFrist", neueFrist.ToString("yyyy-MM-dd"));
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Zahlung erfolgreich verbucht!");
+                        LoadZahlungenData(); // Daten aktualisieren
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler: " + ex.Message);
+                }
+            }
         }
     }
 
